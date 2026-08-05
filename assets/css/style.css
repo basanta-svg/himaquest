@@ -902,9 +902,9 @@ ul {
 .about-portrait {
   position: relative;
   z-index: 5;
-  flex: 0 0 min(360px, 34vw);
+  flex: 0 0 min(460px, 40vw);
   aspect-ratio: 3 / 4;
-  margin-top: -220px;
+  margin-top: -260px;
   overflow: hidden;
   box-shadow: 0 24px 50px rgba(0, 0, 0, 0.3);
 }
@@ -959,23 +959,15 @@ ul {
 .team-showcase {
   max-width: 1400px;
   margin: 0 auto;
-  height: 640px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 2px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
-.team-founder,
 .team-member {
   position: relative;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
-  height: 100%;
-}
-
-.team-founder {
-  grid-column: 1;
-  grid-row: 1 / span 2;
 }
 
 .team-photo {
@@ -989,14 +981,11 @@ ul {
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  filter: grayscale(1);
-  transition: filter var(--transition-med), transform var(--transition-med);
+  transition: transform var(--transition-med);
 }
 
-.team-founder:hover .team-photo img,
 .team-member:hover .team-photo img {
-  filter: grayscale(0);
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
 .team-caption {
@@ -1004,12 +993,8 @@ ul {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 22px 24px;
+  padding: 20px 22px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 55%, rgba(0, 0, 0, 0.92) 100%);
-}
-
-.team-founder .team-caption {
-  padding: 32px;
 }
 
 .team-role {
@@ -1030,10 +1015,6 @@ ul {
   letter-spacing: 0.3px;
   text-transform: uppercase;
   color: var(--color-white);
-}
-
-.team-founder .team-caption h3 {
-  font-size: clamp(22px, 2.2vw, 28px);
 }
 
 /* ===========================
@@ -3329,14 +3310,13 @@ ul {
   justify-content: center;
   height: 44px;
   padding: 10px 18px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+  background: var(--color-white);
+  border: 1px solid var(--color-white);
+  transition: box-shadow var(--transition-fast);
 }
 
 .brand-logo:hover {
-  background: var(--color-white);
-  border-color: var(--color-white);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
 .brand-logo img {
@@ -3344,14 +3324,12 @@ ul {
   width: auto;
   max-width: 150px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
   opacity: 0.92;
-  transition: opacity var(--transition-fast), filter var(--transition-fast);
+  transition: opacity var(--transition-fast);
 }
 
 .brand-logo:hover img {
   opacity: 1;
-  filter: none;
 }
 
 .brand-logo-name {
@@ -3664,19 +3642,8 @@ ul {
   }
 
   .team-showcase {
-    height: auto;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: none;
-  }
-
-  .team-founder {
-    grid-column: 1 / -1;
-    grid-row: auto;
-    height: 420px;
-  }
-
-  .team-member {
-    height: 280px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
   }
 
   .exp-showcase-grid {
@@ -4206,17 +4173,8 @@ ul {
   }
 
   .team-showcase {
-    grid-template-columns: 1fr;
-    gap: 2px;
-  }
-
-  .team-founder {
-    grid-column: 1;
-    height: 380px;
-  }
-
-  .team-member {
-    height: 260px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
   }
 
   .exp-hero {
