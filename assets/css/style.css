@@ -1099,8 +1099,8 @@ ul {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
 .dzongkhag-grid .dest-card {
@@ -1157,22 +1157,43 @@ ul {
   font-size: 12px;
 }
 
-.dzongkhag-extra {
-  display: none;
+.dzongkhag-grid .dest-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 9px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--transition-med), transform var(--transition-med), background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
-.dzongkhag-grid.is-expanded .dzongkhag-extra {
-  display: block;
+.dzongkhag-grid .dest-card-cta svg {
+  flex: none;
+  transition: transform var(--transition-fast);
 }
 
-.load-more-wrap {
-  display: flex;
-  justify-content: center;
-  margin-top: 48px;
+.dzongkhag-grid .dest-card:hover .dest-card-cta {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.load-more-btn.is-hidden {
-  display: none;
+.dzongkhag-grid .dest-card-cta:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-black);
+}
+
+.dzongkhag-grid .dest-card-cta:hover svg {
+  transform: translateX(3px);
 }
 
 /* ===========================
@@ -3310,12 +3331,14 @@ ul {
   justify-content: center;
   height: 44px;
   padding: 10px 18px;
-  background: var(--color-white);
-  border: 1px solid var(--color-white);
-  transition: box-shadow var(--transition-fast);
+  background: transparent;
+  border: 1px solid transparent;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .brand-logo:hover {
+  background: var(--color-white);
+  border-color: var(--color-white);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
@@ -3324,12 +3347,14 @@ ul {
   width: auto;
   max-width: 150px;
   object-fit: contain;
-  opacity: 0.92;
-  transition: opacity var(--transition-fast);
+  opacity: 0.85;
+  filter: brightness(0) invert(1);
+  transition: opacity var(--transition-fast), filter var(--transition-fast);
 }
 
 .brand-logo:hover img {
   opacity: 1;
+  filter: none;
 }
 
 .brand-logo-name {
