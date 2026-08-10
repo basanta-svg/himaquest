@@ -1,4 +1,4 @@
-/* ===========================
+﻿/* ===========================
    Himaquest Travels — Style
    =========================== */
 
@@ -19,7 +19,7 @@
   /* Font Families */
   --font-display: 'Oswald', sans-serif;
   /* Hero & Section Headings */
-  --font-body: 'Cabin', 'Brandon Grotesque', 'Josefin Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'League Spartan', 'Montserrat', 'Helvetica Neue', sans-serif;
   /* Paragraphs, Nav, & Buttons */
   --font-accent: 'Playfair Display', serif;
   /* Quotes & Sub-captions */
@@ -28,7 +28,7 @@
 
   /* Font Weights */
   --weight-light: 300;
-  --weight-regular: 400;
+  --weight-regular: 500;
   --weight-medium: 500;
   --weight-semibold: 600;
   --weight-bold: 700;
@@ -67,7 +67,9 @@ html {
 body {
   font-family: var(--font-body);
   font-weight: var(--weight-regular);
-  color: var(--color-text-main);
+  font-size: clamp(21px, 2vw, 21px);
+  color: #073144;
+  letter-spacing: 0.2px;
   background: var(--color-white);
   overflow-x: hidden;
   line-height: 1.6;
@@ -107,85 +109,89 @@ nav a,
 
 @media (max-width: 767px) {
   h1 {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.725rem;
   }
 
   h3 {
-    font-size: 1.125rem;
+    font-size: 1.294rem;
   }
 
   p {
-    font-size: 0.9375rem;
+    font-size: 1.078rem;
     line-height: 1.5;
   }
 
   blockquote {
-    font-size: 1.1rem;
+    font-size: 1.265rem;
   }
 
   .btn,
   nav a {
-    font-size: 0.8125rem;
+    font-size: 0.934rem;
   }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   h1 {
-    font-size: 3rem;
+    font-size: 3.45rem;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 
   h3 {
-    font-size: 1.25rem;
+    font-size: 1.438rem;
   }
 
   p {
-    font-size: 1rem;
+    font-size: 1.15rem;
     line-height: 1.6;
   }
 
   blockquote {
-    font-size: 1.2rem;
+    font-size: 1.38rem;
   }
 
   .btn,
   nav a {
-    font-size: 0.875rem;
+    font-size: 1.006rem;
   }
 }
 
 @media (min-width: 1024px) {
+  body {
+    font-size: 25px;
+  }
+
   h1 {
     font-size: clamp(2.5rem, 5vw, 4.25rem);
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 2.875rem;
   }
 
   h3 {
-    font-size: 1.375rem;
+    font-size: 1.581rem;
   }
 
   p {
-    font-size: 1.0625rem;
+    font-size: 1.222rem;
     line-height: 1.65;
   }
 
   blockquote {
-    font-size: 1.35rem;
+    font-size: 1.552rem;
   }
 
   .btn,
   nav a {
-    font-size: 0.875rem;
+    font-size: 1.006rem;
   }
 }
 
@@ -308,7 +314,7 @@ ul {
 .header-nav>a,
 .nav-link {
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -383,7 +389,7 @@ ul {
   display: block;
   padding: 11px 26px;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -444,7 +450,7 @@ ul {
   color: var(--color-white);
   border: 1px solid var(--color-accent);
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 1.6px;
   text-transform: uppercase;
@@ -461,7 +467,7 @@ ul {
 
 .btn-enquire--lg {
   padding: 16px 38px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .nav-toggle {
@@ -578,7 +584,7 @@ ul {
   margin-top: 22px;
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: clamp(11px, 1.2vw, 14px);
+  font-size: clamp(13px, 1.3vw, 16px);
   letter-spacing: 3px;
   text-transform: uppercase;
 }
@@ -595,7 +601,7 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.8);
   color: var(--color-white);
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 1.8px;
   text-transform: uppercase;
@@ -678,7 +684,7 @@ ul {
 .intro-eyebrow {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -709,7 +715,7 @@ ul {
   display: inline-block;
   margin-top: 36px;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 1.6px;
   text-transform: uppercase;
@@ -785,7 +791,7 @@ ul {
 .about-us-copy {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 14.5px;
+  font-size: 16.5px;
   line-height: 1.75;
   color: var(--color-gray-700);
   margin-bottom: 18px;
@@ -798,7 +804,7 @@ ul {
   gap: 8px;
   margin-top: 18px;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -923,7 +929,7 @@ ul {
 .about-intro-copy p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 14.5px;
+  font-size: 16.5px;
   line-height: 1.8;
   color: var(--color-gray-700);
   max-width: 62ch;
@@ -950,7 +956,7 @@ ul {
 .team-subtitle {
   margin-top: 16px;
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.4px;
   color: rgba(255, 255, 255, 0.55);
@@ -1000,7 +1006,7 @@ ul {
 .team-role {
   display: block;
   font-family: var(--font-sans);
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -1011,7 +1017,7 @@ ul {
 .team-caption h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 17px;
+  font-size: 19.5px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
   color: var(--color-white);
@@ -1068,7 +1074,7 @@ ul {
 .exp-hero-content p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 14.5px;
+  font-size: 19px;
   line-height: 1.75;
   color: rgba(255, 255, 255, 0.85);
   max-width: 560px;
@@ -1110,15 +1116,6 @@ ul {
   transition: transform var(--transition-med), box-shadow var(--transition-med);
 }
 
-.dzongkhag-grid .dest-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 45%, rgba(0, 0, 0, 0.85) 100%);
-  transition: background var(--transition-med);
-}
-
 .dzongkhag-grid .dest-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 26px 50px rgba(0, 0, 0, 0.22);
@@ -1126,74 +1123,6 @@ ul {
 
 .dzongkhag-grid .dest-card:hover img {
   transform: scale(1.1);
-}
-
-.dzongkhag-grid .dest-card-info {
-  z-index: 2;
-  padding: 28px;
-}
-
-.dzongkhag-grid .dest-card-info::before {
-  content: '';
-  display: block;
-  width: 34px;
-  height: 2px;
-  margin-bottom: 12px;
-  background: var(--color-accent);
-  transition: width var(--transition-med);
-}
-
-.dzongkhag-grid .dest-card:hover .dest-card-info::before {
-  width: 56px;
-}
-
-.dzongkhag-grid .dest-card-info h3 {
-  font-size: 21px;
-  letter-spacing: 0.8px;
-}
-
-.dzongkhag-grid .dest-card-info p {
-  margin-top: 6px;
-  font-size: 12px;
-}
-
-.dzongkhag-grid .dest-card-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 14px;
-  padding: 9px 16px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  border-radius: 999px;
-  color: var(--color-white);
-  font-family: var(--font-sans);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity var(--transition-med), transform var(--transition-med), background-color var(--transition-fast), border-color var(--transition-fast);
-}
-
-.dzongkhag-grid .dest-card-cta svg {
-  flex: none;
-  transition: transform var(--transition-fast);
-}
-
-.dzongkhag-grid .dest-card:hover .dest-card-cta {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.dzongkhag-grid .dest-card-cta:hover {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: var(--color-black);
-}
-
-.dzongkhag-grid .dest-card-cta:hover svg {
-  transform: translateX(3px);
 }
 
 /* ===========================
@@ -1234,7 +1163,7 @@ ul {
 
 .guide-fact-label {
   font-family: var(--font-sans);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1243,7 +1172,7 @@ ul {
 
 .guide-fact-value {
   font-family: var(--font-display);
-  font-size: 13.5px;
+  font-size: 15.5px;
   font-weight: 600;
   color: var(--color-gray-900);
 }
@@ -1285,7 +1214,7 @@ ul {
   background: var(--color-accent);
   color: var(--color-black);
   font-family: var(--font-sans);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1293,7 +1222,7 @@ ul {
 
 .season-card h3 {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 18.5px;
   font-weight: 600;
   letter-spacing: 0.3px;
   text-transform: uppercase;
@@ -1304,7 +1233,7 @@ ul {
 .season-card p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.7;
   color: var(--color-gray-700);
 }
@@ -1331,7 +1260,7 @@ ul {
   margin-top: 18px;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.65);
   max-width: 50ch;
@@ -1355,13 +1284,13 @@ ul {
 .guide-sdf-amount {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 23px;
   color: var(--color-accent);
 }
 
 .guide-sdf-label {
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.6);
   text-align: right;
 }
@@ -1378,7 +1307,7 @@ ul {
   margin-top: 16px;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.8;
   color: var(--color-gray-700);
 }
@@ -1404,7 +1333,7 @@ ul {
   margin-top: 18px;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 14.5px;
+  font-size: 16.5px;
   line-height: 1.85;
   color: var(--color-gray-700);
 }
@@ -1428,7 +1357,7 @@ ul {
   flex: none;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-accent);
 }
 
@@ -1436,7 +1365,7 @@ ul {
   text-align: left;
   color: var(--color-white);
   font-weight: 600;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .history-timeline {
@@ -1462,13 +1391,13 @@ ul {
   width: 84px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 23px;
   color: var(--color-accent);
 }
 
 .history-body h3 {
   font-family: var(--font-display);
-  font-size: 16px;
+  font-size: 18.5px;
   font-weight: 600;
   letter-spacing: 0.2px;
   text-transform: uppercase;
@@ -1479,7 +1408,7 @@ ul {
 .history-body p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.75;
   color: var(--color-gray-700);
 }
@@ -1528,7 +1457,7 @@ ul {
 
 .faq-category-title span {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--color-accent);
 }
@@ -1584,7 +1513,7 @@ ul {
 
 .contact-field label {
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1599,7 +1528,7 @@ ul {
   background: var(--color-white);
   color: var(--color-gray-900);
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 15.5px;
   transition: border-color var(--transition-fast);
 }
 
@@ -1634,7 +1563,7 @@ ul {
 .contact-form-note {
   margin-top: -6px;
   font-family: var(--font-sans);
-  font-size: 12.5px;
+  font-size: 14.5px;
   color: var(--color-accent-hover);
 }
 
@@ -1646,7 +1575,7 @@ ul {
 .contact-info-card h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 17px;
+  font-size: 19.5px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -1683,7 +1612,7 @@ ul {
 .contact-info-label {
   display: block;
   font-family: var(--font-sans);
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1693,7 +1622,7 @@ ul {
 
 .contact-info-value {
   font-family: var(--font-display);
-  font-size: 13.5px;
+  font-size: 15.5px;
   font-weight: 600;
   color: var(--color-gray-900);
 }
@@ -1812,7 +1741,7 @@ ul {
 
 .tour-card-body h3 {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 20.5px;
   font-weight: 600;
   letter-spacing: 0.2px;
   line-height: 1.3;
@@ -1834,7 +1763,7 @@ ul {
   align-items: center;
   gap: 6px;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 0.3px;
   color: var(--color-gray-700);
@@ -1852,7 +1781,7 @@ ul {
   overflow: hidden;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.7;
   color: var(--color-gray-700);
   margin-bottom: 20px;
@@ -1862,7 +1791,7 @@ ul {
   display: inline-flex;
   align-items: center;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -1878,12 +1807,362 @@ ul {
 }
 
 /* ===========================
+   Set Departure (cards)
+   =========================== */
+
+.departure-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.departure-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  transition: box-shadow var(--transition-med), transform var(--transition-med), border-color var(--transition-med);
+}
+
+.departure-card:hover {
+  transform: translateY(-6px);
+  border-color: transparent;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+}
+
+.departure-card-media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.departure-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-med);
+}
+
+.departure-card:hover .departure-card-media img {
+  transform: scale(1.07);
+}
+
+.departure-card-stats {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 40px 20px 16px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.75) 100%);
+}
+
+.departure-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.departure-stat--right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.departure-stat-label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.departure-stat-value {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: var(--color-white);
+}
+
+.departure-card-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 22px 24px;
+}
+
+.departure-card-body h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  line-height: 1.35;
+  color: var(--color-gray-900);
+}
+
+.departure-card-cta {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--color-gray-900);
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--color-gray-900);
+  white-space: nowrap;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.departure-card-cta svg {
+  flex: none;
+  transition: transform var(--transition-fast);
+}
+
+.departure-card:hover .departure-card-cta {
+  color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.departure-card:hover .departure-card-cta svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 1024px) {
+  .departure-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .departure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .departure-card-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ===========================
+   Festival Content Page
+   =========================== */
+
+.festival-story {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 100px 24px 20px;
+}
+
+.festival-story-copy p {
+  margin-bottom: 20px;
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.9;
+  color: var(--color-gray-700);
+}
+
+.festival-story-copy em {
+  font-style: italic;
+}
+
+.festival-story-copy strong {
+  color: var(--color-gray-900);
+  font-weight: 700;
+}
+
+.festival-story-copy h3 {
+  margin: 40px 0 16px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 23px;
+  letter-spacing: 0.3px;
+  color: var(--color-gray-900);
+}
+
+.festival-pdf-band {
+  margin: 60px 0 0;
+  padding: 70px 24px;
+  background: var(--color-white);
+  text-align: center;
+}
+
+.festival-pdf-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.festival-pdf-inner .section-eyebrow {
+  color: var(--color-accent);
+}
+
+.festival-pdf-inner h2 {
+  margin-top: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 37px;
+  letter-spacing: 0.3px;
+  color: var(--color-gray-900);
+}
+
+.festival-pdf-inner p {
+  margin: 16px auto 32px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-gray-700);
+}
+
+.festival-pdf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.festival-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border-radius: 0;
+  border-color: var(--color-gray-900);
+  color: var(--color-gray-900);
+}
+
+.festival-pdf-btn:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-black);
+}
+
+.festival-highlights {
+  padding: 100px 24px;
+  background: var(--color-white);
+}
+
+.festival-entries {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 60px;
+}
+
+.festival-entry {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.festival-entry-meta {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-accent-hover);
+}
+
+.festival-entry h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20.5px;
+  letter-spacing: 0.2px;
+  color: var(--color-gray-900);
+}
+
+.festival-entry p {
+  margin-top: 8px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--color-gray-700);
+}
+
+.festival-table-section {
+  padding: 20px 24px 130px;
+  background: var(--color-offwhite);
+}
+
+.festival-table-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  overflow-x: auto;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+}
+
+.festival-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+}
+
+.festival-table th,
+.festival-table td {
+  padding: 14px 22px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.festival-table thead th {
+  background: var(--color-gray-900);
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.festival-table tbody td {
+  font-size: 15px;
+  color: var(--color-gray-700);
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.festival-table tbody td:first-child {
+  font-weight: 600;
+  color: var(--color-gray-900);
+}
+
+.festival-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.festival-table tbody tr:hover td {
+  background: var(--color-offwhite);
+}
+
+.festival-table-note {
+  max-width: 1000px;
+  margin: 20px auto 0;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-style: italic;
+  color: var(--color-gray-500);
+}
+
+/* ===========================
    Luxury Collection (cards)
    =========================== */
 
 .luxury-collection {
   padding: 100px 24px 130px;
-  background: var(--color-white);
+  background: var(--color-offwhite);
 }
 
 .luxury-grid {
@@ -1895,15 +2174,18 @@ ul {
 }
 
 .luxury-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--color-gray-200);
-  transition: box-shadow var(--transition-med), transform var(--transition-med);
+  background: var(--color-gray-900);
+  border: 1px solid rgba(255, 177, 27, 0.2);
+  transition: box-shadow var(--transition-med), transform var(--transition-med), border-color var(--transition-med);
 }
 
 .luxury-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  border-color: var(--color-accent);
+  box-shadow: 0 40px 70px rgba(0, 0, 0, 0.28);
 }
 
 .luxury-card-media {
@@ -1912,15 +2194,25 @@ ul {
   overflow: hidden;
 }
 
+.luxury-card-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, var(--color-gray-900) 100%);
+  pointer-events: none;
+}
+
 .luxury-card-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: saturate(0.95);
   transition: transform var(--transition-med);
 }
 
 .luxury-card:hover .luxury-card-media img {
-  transform: scale(1.06);
+  transform: scale(1.08);
 }
 
 .luxury-card-tag {
@@ -1929,13 +2221,15 @@ ul {
   left: 18px;
   z-index: 2;
   padding: 7px 14px;
-  background: var(--color-black);
+  background: rgba(13, 13, 13, 0.55);
+  border: 1px solid var(--color-accent);
   color: var(--color-accent);
   font-family: var(--font-sans);
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
+  backdrop-filter: blur(3px);
 }
 
 .luxury-card-nights {
@@ -1944,37 +2238,56 @@ ul {
   right: 18px;
   z-index: 2;
   padding: 7px 14px;
-  background: rgba(255, 255, 255, 0.94);
-  color: var(--color-gray-900);
+  background: rgba(13, 13, 13, 0.55);
+  border: 1px solid rgba(255, 177, 27, 0.4);
+  color: var(--color-white);
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.3px;
+  backdrop-filter: blur(3px);
 }
 
 .luxury-card-body {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   flex: 1;
   padding: 30px 32px 32px;
 }
 
+.luxury-card-body::before {
+  content: '';
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin-bottom: 16px;
+  background: var(--color-accent);
+  transition: width var(--transition-med);
+}
+
+.luxury-card:hover .luxury-card-body::before {
+  width: 60px;
+}
+
 .luxury-card-body h3 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 20px;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 26.5px;
   letter-spacing: 0.2px;
-  line-height: 1.25;
-  color: var(--color-gray-900);
+  line-height: 1.3;
+  color: var(--color-white);
   margin-bottom: 14px;
 }
 
-.luxury-card-body > p {
+.luxury-card-body>p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.8;
-  color: var(--color-gray-700);
+  color: rgba(255, 255, 255, 0.62);
   margin-bottom: 22px;
 }
 
@@ -1985,7 +2298,7 @@ ul {
   margin-top: auto;
   margin-bottom: 22px;
   padding-top: 20px;
-  border-top: 1px solid var(--color-gray-200);
+  border-top: 1px solid rgba(255, 177, 27, 0.2);
 }
 
 .luxury-card-fact {
@@ -1993,9 +2306,9 @@ ul {
   align-items: center;
   gap: 7px;
   font-family: var(--font-sans);
-  font-size: 11.5px;
+  font-size: 13px;
   font-weight: 600;
-  color: var(--color-gray-700);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .luxury-card-fact svg {
@@ -2005,7 +2318,63 @@ ul {
 
 .luxury-card-cta {
   align-self: flex-start;
-  border-radius: 999px;
+  border-radius: 0;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.luxury-card-cta:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-black);
+}
+
+/* Simple luxury cards: image + title + CTA, 3 per row */
+.luxury-grid--simple {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.luxury-card--simple {
+  background: transparent;
+  border: none;
+}
+
+.luxury-card--simple:hover {
+  box-shadow: none;
+}
+
+.luxury-card--simple .luxury-card-media {
+  aspect-ratio: 4 / 5;
+  border-radius: 2px;
+}
+
+.luxury-card--simple .luxury-card-body {
+  padding: 20px 4px 0;
+  align-items: center;
+  text-align: center;
+}
+
+.luxury-card--simple .luxury-card-body::before {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.luxury-card--simple .luxury-card-body h3 {
+  color: var(--color-gray-900);
+  margin-bottom: 18px;
+}
+
+.luxury-card--simple .luxury-card-cta {
+  align-self: center;
+  border-color: var(--color-gray-900);
+  color: var(--color-gray-900);
+}
+
+.luxury-card--simple .luxury-card-cta:hover {
+  background: var(--color-gray-900);
+  border-color: var(--color-gray-900);
+  color: var(--color-white);
 }
 
 /* ===========================
@@ -2019,7 +2388,7 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.5);
   color: var(--color-white);
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -2081,13 +2450,13 @@ ul {
 
 .tour-fact-label {
   font-family: var(--font-sans);
-  font-size: 11.5px;
+  font-size: 13px;
   color: var(--color-gray-500);
 }
 
 .tour-fact-value {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.4;
   color: var(--color-gray-900);
@@ -2103,7 +2472,7 @@ ul {
   padding: 20px 0;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 12.5px;
+  font-size: 14.5px;
   line-height: 1.7;
   color: #c0392b;
 }
@@ -2115,7 +2484,7 @@ ul {
 .tour-detail-block h2 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 19px;
+  font-size: 22px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -2125,7 +2494,7 @@ ul {
 .tour-detail-block>p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.85;
   color: var(--color-gray-700);
 }
@@ -2141,7 +2510,7 @@ ul {
   align-items: flex-start;
   gap: 12px;
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.6;
   color: var(--color-gray-700);
 }
@@ -2166,7 +2535,7 @@ ul {
   gap: 8px;
   margin-top: 12px;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.3px;
   color: var(--color-accent-hover);
@@ -2186,7 +2555,7 @@ ul {
 .tour-cost-card h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18.5px;
   letter-spacing: 0.2px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -2196,7 +2565,7 @@ ul {
 .tour-cost-card p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.8;
   color: var(--color-gray-700);
   max-width: 56ch;
@@ -2211,7 +2580,7 @@ ul {
 .tour-enquire-card h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18.5px;
   letter-spacing: 0.2px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -2221,7 +2590,7 @@ ul {
 .tour-enquire-card>p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.8;
   color: var(--color-gray-700);
   margin-bottom: 26px;
@@ -2252,7 +2621,7 @@ ul {
   align-items: center;
   gap: 10px;
   font-family: var(--font-display);
-  font-size: 13.5px;
+  font-size: 15.5px;
   font-weight: 600;
   color: var(--color-gray-900);
   transition: color var(--transition-fast);
@@ -2271,7 +2640,7 @@ ul {
   align-items: center;
   gap: 8px;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -2292,7 +2661,7 @@ ul {
 .tour-sidebar-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 15px;
+  font-size: 17px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -2320,7 +2689,7 @@ ul {
 
 .tour-sidebar-item h4 {
   font-family: var(--font-display);
-  font-size: 13.5px;
+  font-size: 15.5px;
   font-weight: 600;
   line-height: 1.35;
   color: var(--color-gray-900);
@@ -2339,7 +2708,7 @@ ul {
   overflow: hidden;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
   color: var(--color-gray-700);
 }
@@ -2364,7 +2733,7 @@ ul {
 .section-eyebrow {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -2455,7 +2824,7 @@ ul {
   color: var(--color-black);
   border-radius: 2px;
   font-family: var(--font-sans);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.8px;
   text-transform: uppercase;
@@ -2465,19 +2834,34 @@ ul {
   flex: none;
 }
 
+.dest-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.85) 100%);
+  pointer-events: none;
+}
+
 .dest-card-info {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 2;
   padding: 26px 22px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  background: transparent;
   color: var(--color-white);
+  transition: transform var(--transition-med);
+}
+
+.dest-card:hover .dest-card-info {
+  transform: translateY(-10px);
 }
 
 .dest-card-info h3 {
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: 19.5px;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -2487,10 +2871,53 @@ ul {
 .dest-card-info p {
   margin-top: 4px;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 500;
   letter-spacing: 0.5px;
   opacity: 0.85;
+}
+
+.dest-card-cta {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0;
+  padding: 10px 18px;
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  border-radius: 0;
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-med), margin-top var(--transition-med), opacity var(--transition-med), background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.dest-card-cta svg {
+  flex: none;
+  transition: transform var(--transition-fast);
+}
+
+.dest-card:hover .dest-card-cta {
+  margin-top: 14px;
+  max-height: 44px;
+  opacity: 1;
+}
+
+.dest-card-cta:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-black);
+}
+
+.dest-card-cta:hover svg {
+  transform: translateX(3px);
 }
 
 /* ===========================
@@ -2528,7 +2955,7 @@ ul {
   margin-top: 18px;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.65);
 }
@@ -2592,7 +3019,7 @@ ul {
   border-radius: 0;
   color: var(--color-white);
   font-family: var(--font-sans);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -2612,7 +3039,7 @@ ul {
 .trip-category {
   display: block;
   font-family: var(--font-sans);
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -2622,7 +3049,7 @@ ul {
 
 .trip-card-info h3 {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.3px;
   text-transform: uppercase;
@@ -2633,7 +3060,7 @@ ul {
 .trip-desc {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 12.5px;
+  font-size: 14.5px;
   line-height: 1.55;
   color: rgba(255, 255, 255, 0.85);
   max-height: 0;
@@ -2646,7 +3073,7 @@ ul {
   display: block;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 11.5px;
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.7);
   max-height: 0;
   opacity: 0;
@@ -2674,7 +3101,7 @@ ul {
   padding: 9px 18px;
   border: 1px solid rgba(255, 255, 255, 0.75);
   font-family: var(--font-sans);
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.4px;
   transition: background-color var(--transition-fast), color var(--transition-fast);
@@ -2746,7 +3173,7 @@ ul {
 .why-us-subtitle {
   margin-top: 16px;
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.4px;
   color: var(--color-gray-500);
@@ -2782,7 +3209,7 @@ ul {
 
 .why-us-item h3 {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -2793,7 +3220,7 @@ ul {
 .why-us-item p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.7;
   color: var(--color-gray-700);
 }
@@ -2843,7 +3270,7 @@ ul {
   z-index: 2;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 19px;
+  font-size: 22px;
   letter-spacing: 0.2px;
   line-height: 1.25;
   color: var(--color-white);
@@ -2860,7 +3287,7 @@ ul {
   overflow: hidden;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.7;
   color: var(--color-gray-700);
   margin-bottom: 14px;
@@ -2871,7 +3298,7 @@ ul {
   align-items: center;
   gap: 8px;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -2898,7 +3325,7 @@ ul {
 .blog-subtitle {
   margin-top: 16px;
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.4px;
   color: var(--color-gray-500);
@@ -2939,7 +3366,7 @@ ul {
   background: var(--color-accent);
   color: var(--color-black);
   font-family: var(--font-sans);
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -2954,7 +3381,7 @@ ul {
   align-items: center;
   gap: 8px;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -2968,7 +3395,7 @@ ul {
 
 .blog-card-body h3 {
   font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 20.5px;
   font-weight: 600;
   letter-spacing: 0.2px;
   line-height: 1.35;
@@ -2987,7 +3414,7 @@ ul {
 .blog-card-body p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.7;
   color: var(--color-gray-700);
   margin-bottom: 20px;
@@ -2998,7 +3425,7 @@ ul {
   align-items: center;
   gap: 8px;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -3058,7 +3485,7 @@ ul {
   border: 1px solid var(--color-gray-900);
   border-radius: 0;
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 1.4px;
   color: var(--color-gray-900);
@@ -3094,7 +3521,7 @@ ul {
   text-align: left;
   cursor: pointer;
   font-family: var(--font-sans);
-  font-size: 14.5px;
+  font-size: 16.5px;
   font-weight: 700;
   line-height: 1.5;
   color: var(--color-gray-900);
@@ -3162,7 +3589,7 @@ ul {
 .faq-answer p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.75;
   color: var(--color-gray-700);
   max-width: 52ch;
@@ -3177,7 +3604,7 @@ ul {
   max-width: 62ch;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.75;
   color: var(--color-gray-700);
 }
@@ -3243,7 +3670,7 @@ ul {
 .enquire-band-content p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.75;
   margin-bottom: 32px;
@@ -3264,7 +3691,7 @@ ul {
   border-radius: 0;
   color: var(--color-white);
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 1.4px;
   white-space: nowrap;
@@ -3293,6 +3720,59 @@ ul {
 }
 
 /* ===========================
+   Brand Trust (partner logos)
+   =========================== */
+
+.brand-trust {
+  padding: 90px 24px;
+  background: var(--color-white);
+  text-align: center;
+}
+
+.brand-trust .brand-marquee {
+  overflow: visible;
+  padding: 0;
+  border-bottom: none;
+  margin-top: 52px;
+}
+
+.brand-trust .brand-marquee-track {
+  width: max-content;
+  min-width: 0;
+  justify-content: center;
+  gap: 48px;
+}
+
+.brand-trust .brand-logo {
+  height: auto;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.brand-trust .brand-logo:hover {
+  background: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.brand-trust .brand-logo img {
+  height: 76px;
+  max-width: 220px;
+  filter: none;
+  opacity: 1;
+  transition: transform var(--transition-med);
+}
+
+.brand-trust .brand-logo:hover img {
+  transform: scale(1.08) translateY(-4px);
+}
+
+.brand-trust .brand-logo-name {
+  color: var(--color-gray-900);
+}
+
+/* ===========================
    Footer
    =========================== */
 
@@ -3310,7 +3790,9 @@ ul {
   scrollbar-width: none;
 }
 
-.brand-marquee::-webkit-scrollbar { display: none; }
+.brand-marquee::-webkit-scrollbar {
+  display: none;
+}
 
 .brand-marquee-track {
   max-width: 1400px;
@@ -3365,7 +3847,7 @@ ul {
   z-index: 3;
   white-space: nowrap;
   font-family: var(--font-sans);
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.6px;
   text-transform: uppercase;
@@ -3391,34 +3873,40 @@ ul {
 
 .footer-col h4 {
   font-family: var(--font-display);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 1.2px;
   text-transform: uppercase;
   color: var(--color-white);
-  margin-bottom: 22px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-col ul {
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 11px;
 }
 
 .footer-col a {
+  display: inline-block;
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.3;
   color: rgba(255, 255, 255, 0.6);
-  transition: color var(--transition-fast);
+  transition: color var(--transition-fast), transform var(--transition-fast);
 }
 
 .footer-col a:hover {
   color: var(--color-accent);
+  transform: translateX(3px);
 }
 
 .footer-contact li {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.3;
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -3431,7 +3919,7 @@ ul {
 .footer-tagline {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.55);
   max-width: 320px;
@@ -3462,7 +3950,7 @@ ul {
 
 .footer-col--newsletter p {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.55);
   margin-bottom: 18px;
   line-height: 1.6;
@@ -3486,7 +3974,7 @@ ul {
   border: none;
   color: var(--color-white);
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .footer-newsletter-form input::placeholder {
@@ -3515,7 +4003,7 @@ ul {
 .footer-newsletter-note {
   margin-top: 12px;
   font-family: var(--font-sans);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.3px;
   color: var(--color-accent);
 }
@@ -3532,7 +4020,7 @@ ul {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: rgba(255, 255, 255, 0.45);
 }
 
@@ -3541,13 +4029,13 @@ ul {
   gap: 24px;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
 }
 
 .footer-legal a {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: rgba(255, 255, 255, 0.45);
   transition: color var(--transition-fast);
 }
@@ -3560,13 +4048,13 @@ ul {
 .footer-bottom>p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
 }
 
 .footer-credit a {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: rgba(255, 255, 255, 0.6);
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   transition: color var(--transition-fast), border-color var(--transition-fast);
@@ -3993,6 +4481,10 @@ ul {
     padding: 0 18px;
   }
 
+  .festival-entries {
+    grid-template-columns: 1fr;
+  }
+
   .hero-cta {
     flex-direction: column;
     width: 100%;
@@ -4002,7 +4494,7 @@ ul {
     width: 100%;
     text-align: center;
     padding: 12px 20px;
-    font-size: 11px;
+    font-size: 12.5px;
     letter-spacing: 1.4px;
   }
 
@@ -4055,10 +4547,22 @@ ul {
     padding: 26px;
   }
 
-  .brand-marquee { padding: 28px 0 36px; }
-  .brand-marquee-track { gap: 48px; }
-  .brand-logo, .brand-logo img { height: 34px; }
-  .brand-logo img { max-width: 110px; }
+  .brand-marquee {
+    padding: 28px 0 36px;
+  }
+
+  .brand-marquee-track {
+    gap: 48px;
+  }
+
+  .brand-logo,
+  .brand-logo img {
+    height: 34px;
+  }
+
+  .brand-logo img {
+    max-width: 110px;
+  }
 
   .enquire-map-section {
     margin-top: 48px;
