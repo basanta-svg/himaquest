@@ -4141,7 +4141,7 @@ ul {
 }
 
 .footer-logo {
-  height: 34px;
+  height: 40px;
   width: auto;
   margin-bottom: 20px;
 }
@@ -4191,7 +4191,7 @@ ul {
   color: var(--color-black);
 }
 
-.footer-col--newsletter p {
+.footer-col--reviews p {
   font-family: var(--font-sans);
   font-size: 15px;
   color: rgba(255, 255, 255, 0.55);
@@ -4199,56 +4199,58 @@ ul {
   line-height: 1.6;
 }
 
-.footer-newsletter-form {
+.footer-review-badges {
   display: flex;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  transition: border-color var(--transition-fast);
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.footer-newsletter-form:focus-within {
-  border-color: var(--color-accent);
-}
-
-.footer-newsletter-form input {
-  flex: 1;
-  min-width: 0;
-  padding: 13px 14px;
-  background: transparent;
-  border: none;
-  color: var(--color-white);
-  font-family: var(--font-sans);
-  font-size: 15px;
-}
-
-.footer-newsletter-form input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
-}
-
-.footer-newsletter-form input:focus {
-  outline: none;
-}
-
-.footer-newsletter-form button {
+.footer-review-badge {
   display: flex;
+  flex: 1 1 0;
+  min-width: 130px;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  flex-shrink: 0;
-  background: var(--color-accent);
-  color: var(--color-black);
-  transition: background-color var(--transition-fast);
+  gap: 10px;
+  padding: 11px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
-.footer-newsletter-form button:hover {
-  background: var(--color-accent-hover);
+.footer-review-badge:hover {
+  border-color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.04);
 }
 
-.footer-newsletter-note {
-  margin-top: 12px;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  letter-spacing: 0.3px;
+.footer-review-icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-review-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  min-width: 0;
+  text-align: center;
+}
+
+.footer-review-stars {
   color: var(--color-accent);
+  font-size: 12px;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.footer-review-source {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .footer-bottom {
