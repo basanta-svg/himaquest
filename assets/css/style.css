@@ -202,11 +202,19 @@ body.nav-open {
 img {
   display: block;
   max-width: 100%;
+  -webkit-user-drag: none;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* Card titles sit inside big clickable <a> wrappers — force them selectable
+   so visitors can copy titles instead of the link's native drag-ghost taking over. */
+h1, h2, h3, h4, h5, h6 {
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 button {
@@ -263,10 +271,10 @@ ul {
 }
 
 .header-inner {
-  max-width: 1400px;
+  width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1072,6 +1080,11 @@ ul {
   margin: 0 auto;
 }
 
+.exp-hero-content .experience-badge {
+  position: static;
+  margin-bottom: 18px;
+}
+
 .exp-hero-content h1 {
   font-family: var(--font-display);
   font-weight: 700;
@@ -1080,7 +1093,7 @@ ul {
   text-transform: none;
   line-height: 1.15;
   color: var(--color-white);
-  margin-bottom: 18px;
+  margin-bottom: 0;
   max-width: 14ch;
 }
 
@@ -2317,6 +2330,7 @@ ul {
 }
 
 .luxury-card-media {
+  display: block;
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
@@ -3141,11 +3155,190 @@ ul {
   color: rgba(255, 255, 255, 0.65);
 }
 
-.experiences-slider-wrap {
+/* ===========================
+   Testimonials
+   =========================== */
+
+.testimonials {
+  background: var(--color-offwhite);
+  padding: 70px 0;
+  overflow: hidden;
+}
+
+.testimonials-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.testimonials-summary {
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.testimonials-label {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: var(--color-text-main);
+  margin-bottom: 10px;
+}
+
+.testimonials-stars {
+  display: flex;
+  gap: 4px;
+  color: #febe17;
+  margin-bottom: 10px;
+}
+
+.testimonials-count {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: var(--color-text-muted);
+  margin-bottom: 14px;
+}
+
+.testimonials-google-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.testimonials-google-logo span {
+  font-family: 'Product Sans', Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: #5f6368;
+  letter-spacing: 0.2px;
+}
+
+.testimonials-slider-wrap {
   position: relative;
   flex: 1 1 auto;
   min-width: 0;
 }
+
+.testimonials-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  cursor: grab;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding: 4px 4px 8px;
+}
+
+.testimonials-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonials-slider.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+.testimonials-slider.is-dragging .testimonial-card {
+  pointer-events: none;
+}
+
+.testimonial-card {
+  flex: 0 0 280px;
+  width: 280px;
+  scroll-snap-align: start;
+  background: var(--color-white);
+  border-radius: 10px;
+  padding: 24px 22px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.testimonial-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.testimonial-avatar {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-meta {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.testimonial-meta h4 {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-main);
+  line-height: 1.3;
+}
+
+.testimonial-meta span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+}
+
+.testimonial-g {
+  flex: 0 0 20px;
+}
+
+.testimonial-rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.testimonial-star-row {
+  display: flex;
+  gap: 2px;
+  color: #febe17;
+}
+
+.testimonial-text {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--color-text-main);
+}
+
+.testimonial-more {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 
 .experiences-slider {
   display: flex;
@@ -3414,8 +3607,8 @@ ul {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
 }
 
 .experience-media {
@@ -3857,12 +4050,18 @@ ul {
   overflow: hidden;
 }
 
+/* Full-bleed overlay across the whole section — previously only the
+   centered .enquire-band-inner box had a dark overlay (via its own
+   ::before), so on wide viewports the left/right edges outside that
+   1400px box showed only the much lighter gradient below, reading as
+   "no overlay" strips at the sides. One uniform, lighter overlay now
+   covers the entire section edge to edge. */
 .enquire-band::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.35) 100%);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .enquire-band-inner {
@@ -3876,17 +4075,17 @@ ul {
 }
 
 .enquire-band-content {
+  position: relative;
+  z-index: 2;
   max-width: 520px;
   padding: 44px 40px;
-  background: rgba(13, 13, 13, 0.6);
-  backdrop-filter: blur(6px);
 }
 
 .enquire-band-content h2 {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: clamp(20px, 2.4vw, 27px);
-  line-height: 1.35;
+  line-height: 1.25;
   letter-spacing: 0.2px;
   margin-bottom: 18px;
   color: var(--color-white);
@@ -4173,7 +4372,7 @@ ul {
   margin: 0;
   color: rgba(255, 255, 255, 0.75);
   background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--color-black);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 0;
   transition: border-color var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
 }
@@ -4188,7 +4387,8 @@ ul {
 }
 
 .footer-social:hover {
-  color: var(--color-black);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .footer-col--reviews p {
@@ -4315,6 +4515,29 @@ ul {
    =========================== */
 
 @media (max-width: 1024px) {
+  .testimonials-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .testimonials-summary {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 24px;
+  }
+
+  .testimonials-label,
+  .testimonials-stars,
+  .testimonials-count {
+    margin-bottom: 0;
+  }
+
+  .testimonials-slider-wrap {
+    width: 100%;
+  }
+
   .about-us-inner {
     grid-template-columns: 1fr;
     gap: 64px;

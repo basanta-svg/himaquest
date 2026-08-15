@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initNavDropdown();
   initHeroSlider();
+  initTestimonialsSlider();
   initExperiencesSlider();
   initDestinationsSlider();
   initFaqToggle();
@@ -253,6 +254,44 @@ function initDestinationsSlider() {
 }
 
 /* Mouse/touch draggable trips slider with arrow-button navigation */
+/* Google reviews carousel on the homepage */
+function initTestimonialsSlider() {
+  const slider = document.getElementById('testiSlider');
+  if (!slider) return;
+
+  const DRAG_THRESHOLD = 6;
+  let isDown = false;
+  let hasDragged = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+
+  function onPointerDown(e) {
+    isDown = true;
+    hasDragged = false;
+    slider.classList.add('is-dragging');
+    startX = e.pageX;
+    startScrollLeft = slider.scrollLeft;
+  }
+
+  function onPointerMove(e) {
+    if (!isDown) return;
+    const delta = e.pageX - startX;
+    if (Math.abs(delta) > DRAG_THRESHOLD) hasDragged = true;
+    slider.scrollLeft = startScrollLeft - delta;
+  }
+
+  function endDrag() {
+    if (!isDown) return;
+    isDown = false;
+    slider.classList.remove('is-dragging');
+  }
+
+  slider.addEventListener('mousedown', onPointerDown);
+  window.addEventListener('mousemove', onPointerMove);
+  window.addEventListener('mouseup', endDrag);
+  slider.addEventListener('mouseleave', endDrag);
+}
+
 function initExperiencesSlider() {
   const slider = document.getElementById('expSlider');
   const prevBtn = document.getElementById('expPrev');
