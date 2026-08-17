@@ -3339,6 +3339,11 @@ ul {
   cursor: pointer;
 }
 
+.experiences-slider-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+}
 
 .experiences-slider {
   display: flex;
