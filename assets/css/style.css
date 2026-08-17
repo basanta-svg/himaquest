@@ -3211,7 +3211,7 @@ ul {
 }
 
 .testimonials-google-logo span {
-  font-family: 'Product Sans', Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: 19px;
   font-weight: 500;
   color: #5f6368;
