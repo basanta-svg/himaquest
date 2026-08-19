@@ -1064,6 +1064,37 @@ ul {
   padding: calc(var(--header-height) + 24px) 24px 40px;
 }
 
+.exp-hero--form-split {
+  min-height: 58vh;
+}
+
+.hero-enquiry-wrap {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  padding: 0 24px 100px;
+  background: var(--color-white);
+}
+
+.hero-enquiry-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 560px;
+  background: var(--color-white);
+  padding: 56px 48px;
+}
+
+.hero-enquiry-card--split {
+  margin-top: -320px;
+}
+
+.hero-enquiry-card .section-title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
 .exp-hero::before {
   content: '';
   position: absolute;
@@ -1506,19 +1537,6 @@ ul {
   background: var(--color-white);
 }
 
-.contact-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
-  gap: 64px;
-  align-items: start;
-}
-
-.contact-form-wrap .section-title {
-  margin-bottom: 32px;
-}
-
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -1593,71 +1611,55 @@ ul {
   color: var(--color-accent-hover);
 }
 
-.contact-info-card {
-  padding: 40px;
-  background: var(--color-offwhite);
-}
-
-.contact-info-card h3 {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 19.5px;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  color: var(--color-gray-900);
-  margin-bottom: 26px;
-}
-
-.contact-info-item {
+.contact-info-grid {
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding-bottom: 22px;
-  margin-bottom: 22px;
+  flex-wrap: wrap;
+  gap: 0;
+  border-top: 1px solid var(--color-gray-200);
+  border-left: 1px solid var(--color-gray-200);
+}
+
+.contact-info-box {
+  flex: 1 1 220px;
+  padding: 40px 32px;
+  border-right: 1px solid var(--color-gray-200);
   border-bottom: 1px solid var(--color-gray-200);
 }
 
-.contact-info-item:last-of-type {
-  border-bottom: none;
-  margin-bottom: 28px;
-  padding-bottom: 0;
-}
-
-.contact-info-icon {
+.contact-info-box-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex: none;
-  width: 40px;
-  height: 40px;
-  color: var(--color-accent);
-  border: 1px solid var(--color-gray-200);
-  background: var(--color-white);
-}
-
-.contact-info-label {
-  display: block;
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
   color: var(--color-gray-500);
-  margin-bottom: 4px;
+  margin-bottom: 24px;
 }
 
-.contact-info-value {
+.contact-info-box h3 {
   font-family: var(--font-display);
-  font-size: 15.5px;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
   color: var(--color-gray-900);
+  margin-bottom: 12px;
 }
 
-.contact-info-value a {
+.contact-info-box p {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--color-gray-700);
+}
+
+.contact-info-box p a {
+  color: var(--color-gray-700);
   transition: color var(--transition-fast);
 }
 
-.contact-info-value a:hover {
+.contact-info-box p a:hover {
   color: var(--color-accent-hover);
 }
 
@@ -1679,7 +1681,8 @@ ul {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 22px;
+  margin: 40px auto 0;
+  max-width: 1400px;
 }
 
 .contact-info-socials .footer-social {
@@ -3121,17 +3124,9 @@ ul {
 
 .experiences {
   position: relative;
-  padding: 110px 0 130px;
-  background: var(--color-dark) url('../images/The Mindful destination tariff 4.jpg') center / cover no-repeat;
+  padding: 70px 0 80px;
+  background: linear-gradient(135deg, #24282a 0%, #3a4042 35%, #5c6366 100%);
   overflow: hidden;
-}
-
-.experiences::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.7);
 }
 
 .experiences-inner {
@@ -3139,7 +3134,7 @@ ul {
   z-index: 2;
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 40px;
   width: 100%;
   padding-left: max(24px, calc((100vw - 1600px) / 2 + 40px));
 }
@@ -3618,14 +3613,14 @@ ul {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
 }
 
 .blog-card-media {
   position: relative;
   display: block;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 
@@ -3732,6 +3727,104 @@ ul {
 }
 
 /* ===========================
+   Blog / Journal — homepage full-width overlay cards
+   =========================== */
+
+.blog-feature-grid {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+}
+
+.blog-feature-card {
+  position: relative;
+  display: block;
+  height: clamp(440px, 58vh, 640px);
+  overflow: hidden;
+}
+
+.blog-feature-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-med);
+}
+
+.blog-feature-card:hover img {
+  transform: scale(1.05);
+}
+
+.blog-feature-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 52px 56px 48px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 38%, rgba(0, 0, 0, 0.55) 72%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+.blog-feature-overlay .blog-meta {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.blog-feature-overlay .blog-dot {
+  opacity: 0.7;
+}
+
+.blog-feature-title {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(19px, 2vw, 24px);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  line-height: 1.3;
+  color: var(--color-white);
+  margin-bottom: 14px;
+}
+
+.blog-feature-desc {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+
+.blog-feature-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  transition: gap var(--transition-fast);
+}
+
+.blog-feature-cta svg {
+  transition: transform var(--transition-fast);
+}
+
+.blog-feature-card:hover .blog-feature-cta {
+  gap: 12px;
+}
+
+.blog-feature-card:hover .blog-feature-cta svg {
+  transform: translateX(4px);
+}
+
+/* ===========================
    FAQ
    =========================== */
 
@@ -3742,28 +3835,39 @@ ul {
   overflow: hidden;
 }
 
-.faq-leaf {
+/* ===========================
+   Impact ("We Do More Than Travel")
+   =========================== */
+
+.impact {
+  position: relative;
+  padding: 130px 24px 150px;
+  background: var(--color-white);
+  overflow: hidden;
+}
+
+.impact-leaf {
   position: absolute;
   z-index: 1;
   width: clamp(90px, 9vw, 160px);
   height: auto;
   pointer-events: none;
   filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.16));
-  animation: faqLeafFloat 7s ease-in-out infinite;
+  animation: leafFloat 7s ease-in-out infinite;
 }
 
-.faq-leaf--left {
+.impact-leaf--left {
   top: 6%;
   left: -20px;
 }
 
-.faq-leaf--right {
+.impact-leaf--right {
   bottom: 6%;
   right: -20px;
   animation-delay: -3.5s;
 }
 
-@keyframes faqLeafFloat {
+@keyframes leafFloat {
 
   0%,
   100% {
@@ -3773,6 +3877,66 @@ ul {
   50% {
     transform: translateY(-18px);
   }
+}
+
+.impact-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.impact-title {
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(19px, 2.4vw, 24px);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-gray-900);
+  margin-bottom: 90px;
+}
+
+.impact-title strong {
+  font-weight: 700;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 60px;
+}
+
+.impact-item {
+  max-width: 420px;
+}
+
+.impact-item--first {
+  justify-self: start;
+}
+
+.impact-item--second {
+  justify-self: end;
+  margin-top: 130px;
+}
+
+.impact-label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-gray-900);
+  margin-bottom: 16px;
+}
+
+.impact-text {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--color-gray-700);
 }
 
 .faq-head {
@@ -4419,6 +4583,14 @@ ul {
    =========================== */
 
 @media (max-width: 1024px) {
+  .impact-grid {
+    column-gap: 32px;
+  }
+
+  .impact-item--second {
+    margin-top: 60px;
+  }
+
   .about-us-inner {
     grid-template-columns: 1fr;
     gap: 64px;
@@ -4433,9 +4605,8 @@ ul {
     position: static;
   }
 
-  .contact-inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
+  .contact-info-box {
+    flex-basis: 45%;
   }
 
   .guide-facts-grid {
@@ -4528,8 +4699,20 @@ ul {
   }
 
   .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .blog-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-feature-card {
+    height: clamp(360px, 60vh, 480px);
+  }
+
+  .blog-feature-overlay {
+    padding: 36px 28px 32px;
   }
 
   .experience-grid {
@@ -4897,8 +5080,9 @@ ul {
     grid-template-columns: 1fr;
   }
 
-  .contact-info-card {
-    padding: 26px;
+  .contact-info-box {
+    flex-basis: 100%;
+    padding: 32px 24px;
   }
 
   .brand-marquee {
@@ -5075,6 +5259,22 @@ ul {
     max-width: none;
   }
 
+  .exp-hero--form-split {
+    min-height: 46vh;
+  }
+
+  .hero-enquiry-wrap {
+    padding: 0 16px 60px;
+  }
+
+  .hero-enquiry-card {
+    padding: 36px 24px;
+  }
+
+  .hero-enquiry-card--split {
+    margin-top: -220px;
+  }
+
   .exp-showcase-grid {
     grid-template-columns: 1fr;
   }
@@ -5106,9 +5306,21 @@ ul {
     gap: 0;
   }
 
-  .faq-leaf {
+  .impact-leaf {
     width: 65px;
     opacity: 0.6;
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr;
+    row-gap: 56px;
+  }
+
+  .impact-item--first,
+  .impact-item--second {
+    justify-self: start;
+    margin-top: 0;
+    max-width: none;
   }
 
   .faq-col:first-child .faq-item:last-child {

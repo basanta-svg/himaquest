@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Josefin+Sans:wght@400;500;600;700&family=League+Spartan:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@1,400;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Josefin+Sans:wght@400;500;600;700&family=League+Spartan:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Oswald:wght@500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=36">
+  <link rel="stylesheet" href="assets/css/style.css?v=50">
 </head>
 
 <body>
@@ -563,29 +563,32 @@
     </div>
   </section>
 
-  <section class="brand-trust">
-    <div class="section-head">
-      <span class="section-eyebrow">Trusted By</span>
-      <h2 class="section-title">Recognised Across Bhutan's Travel Industry</h2>
-    </div>
-    <div class="brand-marquee">
-      <div class="brand-marquee-track">
-        <a href="https://www.tourism.gov.bt" class="brand-logo" target="_blank" rel="noopener">
-          <img src="assets/images/brand/Tourism%20Council%20of%20Bhutan.png" alt="Tourism Council of Bhutan">
-          <span class="brand-logo-name">Tourism Council of Bhutan</span>
-        </a>
-        <a href="https://www.drukair.com.bt" class="brand-logo" target="_blank" rel="noopener">
-          <img src="assets/images/brand/Drukair.png" alt="Drukair">
-          <span class="brand-logo-name">Drukair</span>
-        </a>
-        <a href="https://www.bhutanairlines.bt" class="brand-logo" target="_blank" rel="noopener">
-          <img src="assets/images/brand/Bhutan%20Airlines.png" alt="Bhutan Airlines">
-          <span class="brand-logo-name">Bhutan Airlines</span>
-        </a>
-        <a href="https://www.gaob.org.bt" class="brand-logo" target="_blank" rel="noopener">
-          <img src="assets/images/brand/guide%20assocation%20of%20bhutan.png" alt="Guide Association of Bhutan">
-          <span class="brand-logo-name">Guide Association of Bhutan</span>
-        </a>
+  <section class="impact" id="impact">
+    <img src="assets/images/leaves-left.avif" alt="" class="impact-leaf impact-leaf--left" aria-hidden="true">
+    <img src="assets/images/leaves-right.avif" alt="" class="impact-leaf impact-leaf--right" aria-hidden="true">
+
+    <div class="impact-inner">
+      <h2 class="impact-title">We Do <strong>More Than Travel</strong></h2>
+
+      <div class="impact-grid">
+        <div class="impact-item impact-item--first">
+          <h3 class="impact-label">We Sponsor A Child's Education</h3>
+          <p class="impact-text">Education is one of the most powerful tools for lasting change. For every guest
+            who travels with us, we sponsor a full year of school fees, books and uniforms for a child in a rural
+            Bhutanese community. What begins as your journey through the Himalayas becomes an investment in
+            someone else's future &mdash; helping break down the barriers that keep young minds from reaching
+            their full potential.</p>
+        </div>
+
+        <div class="impact-item impact-item--second">
+          <h3 class="impact-label">And Support A Remote Monastery</h3>
+          <p class="impact-text">Bhutan's remote monasteries are guardians of a living spiritual tradition, often
+            surviving on modest local support alone. With every trip, we contribute directly to the upkeep and
+            wellbeing of a remote private monastery &mdash; funding repairs, daily provisions and care for the
+            monks who preserve centuries of Buddhist teaching in some of the kingdom's most isolated valleys.
+            It's our way of ensuring the culture you come to experience continues to thrive for generations to
+            come.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -597,82 +600,94 @@
       <p class="blog-subtitle">Field notes, guides and inspiration from our travel designers.</p>
     </div>
 
-    <div class="blog-grid">
-      <article class="blog-card">
-        <a href="#" class="blog-card-media">
-          <img src="assets/images/monk.jpg" alt="Young monk inside a Bhutanese monastery">
-          <span class="blog-category">Culture</span>
-        </a>
-        <div class="blog-card-body">
+    <div class="blog-feature-grid">
+      <a href="#" class="blog-feature-card">
+        <img src="assets/images/monk.jpg" alt="Young monk inside a Bhutanese monastery">
+        <span class="blog-category">Culture</span>
+        <div class="blog-feature-overlay">
           <div class="blog-meta">
             <span class="blog-date">12 July 2026</span>
             <span class="blog-dot">&bull;</span>
             <span class="blog-author">By Tshering Dorji</span>
           </div>
-          <h3><a href="#">Inside Bhutan's Gross National Happiness Philosophy</a></h3>
-          <p>How the kingdom's guiding principle quietly shapes everything from national policy to the way every guest
-            is welcomed.</p>
-          <a href="#" class="blog-cta">
-            READ MORE
+          <h3 class="blog-feature-title">Inside Bhutan's Gross National Happiness Philosophy</h3>
+          <p class="blog-feature-desc">How the kingdom's guiding principle quietly shapes everything from national
+            policy to the way every guest is welcomed.</p>
+          <span class="blog-feature-cta">
+            VIEW DETAILS
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
-          </a>
+          </span>
         </div>
-      </article>
+      </a>
 
-      <article class="blog-card">
-        <a href="#" class="blog-card-media">
-          <img src="assets/images/buddha%20point.jpg" alt="Buddha Dordenma statue overlooking Thimphu">
-          <span class="blog-category">Travel Guide</span>
-        </a>
-        <div class="blog-card-body">
+      <a href="#" class="blog-feature-card">
+        <img src="assets/images/buddha%20point.jpg" alt="Buddha Dordenma statue overlooking Thimphu">
+        <span class="blog-category">Travel Guide</span>
+        <div class="blog-feature-overlay">
           <div class="blog-meta">
             <span class="blog-date">28 June 2026</span>
             <span class="blog-dot">&bull;</span>
             <span class="blog-author">By Pema Choden</span>
           </div>
-          <h3><a href="#">A First-Timer's Guide to Thimphu</a></h3>
-          <p>Where to watch the sunset over Buddha Point, what to eat, and how to spend a slow, unhurried day in the
-            capital.</p>
-          <a href="#" class="blog-cta">
-            READ MORE
+          <h3 class="blog-feature-title">A First-Timer's Guide to Thimphu</h3>
+          <p class="blog-feature-desc">Where to watch the sunset over Buddha Point, what to eat, and how to spend a
+            slow, unhurried day in the capital.</p>
+          <span class="blog-feature-cta">
+            VIEW DETAILS
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
-          </a>
+          </span>
         </div>
-      </article>
+      </a>
 
-      <article class="blog-card">
-        <a href="#" class="blog-card-media">
-          <img src="assets/images/motorcycling.png" alt="Motorcycling through Bhutan's mountain roads">
-          <span class="blog-category">Adventure</span>
-        </a>
-        <div class="blog-card-body">
+      <a href="#" class="blog-feature-card">
+        <img src="assets/images/motorcycling.png" alt="Motorcycling through Bhutan's mountain roads">
+        <span class="blog-category">Adventure</span>
+        <div class="blog-feature-overlay">
           <div class="blog-meta">
             <span class="blog-date">03 June 2026</span>
             <span class="blog-dot">&bull;</span>
             <span class="blog-author">By Karma Wangchuk</span>
           </div>
-          <h3><a href="#">Riding the Switchbacks: Bhutan by Motorbike</a></h3>
-          <p>Notes from the road on the passes, prayer flags and unplanned stops that make touring Bhutan by bike
-            unforgettable.</p>
-          <a href="#" class="blog-cta">
-            READ MORE
+          <h3 class="blog-feature-title">Riding the Switchbacks: Bhutan by Motorbike</h3>
+          <p class="blog-feature-desc">Notes from the road on the passes, prayer flags and unplanned stops that make
+            touring Bhutan by bike unforgettable.</p>
+          <span class="blog-feature-cta">
+            VIEW DETAILS
             <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
-          </a>
+          </span>
         </div>
-      </article>
+      </a>
+
+      <a href="#" class="blog-feature-card">
+        <img src="assets/images/Dochula1.jpg" alt="108 chortens at Dochula Pass, Bhutan">
+        <span class="blog-category">Guide</span>
+        <div class="blog-feature-overlay">
+          <div class="blog-meta">
+            <span class="blog-date">15 May 2026</span>
+            <span class="blog-dot">&bull;</span>
+            <span class="blog-author">By Sonam Yangchen</span>
+          </div>
+          <h3 class="blog-feature-title">Crossing Dochula Pass: 108 Chortens and a Himalayan View</h3>
+          <p class="blog-feature-desc">Why this short stop between Thimphu and Punakha has become one of the most
+            photographed moments on any Bhutan itinerary.</p>
+          <span class="blog-feature-cta">
+            VIEW DETAILS
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg>
+          </span>
+        </div>
+      </a>
     </div>
   </section>
 
   <section class="faq" id="faq">
-    <img src="assets/images/leaves-left.avif" alt="" class="faq-leaf faq-leaf--left" aria-hidden="true">
-    <img src="assets/images/leaves-right.avif" alt="" class="faq-leaf faq-leaf--right" aria-hidden="true">
-
     <div class="faq-head">
       <h2 class="faq-title">Frequently Asked<br>Questions</h2>
       <a href="#" class="btn-pill">VIEW ALL FAQS</a>
