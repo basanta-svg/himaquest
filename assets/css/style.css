@@ -954,11 +954,7 @@ ul {
 
 .team {
   padding: 120px 24px 130px;
-  background: var(--color-black);
-}
-
-.team .section-title {
-  color: var(--color-white);
+  background: var(--color-offwhite);
 }
 
 .team-subtitle {
@@ -967,33 +963,35 @@ ul {
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.4px;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--color-gray-500);
 }
 
 .team-showcase {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
 .team-member {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
   overflow: hidden;
   transition: transform var(--transition-med), box-shadow var(--transition-med);
 }
 
 .team-member:hover {
   transform: translateY(-6px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
 .team-photo {
   position: relative;
+  flex: 0 0 42%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
   background: var(--color-gray-900);
@@ -1012,7 +1010,11 @@ ul {
 }
 
 .team-caption {
-  padding: 22px 20px 24px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px 32px;
 }
 
 .team-role {
@@ -3124,9 +3126,19 @@ ul {
 
 .experiences {
   position: relative;
-  padding: 70px 0 80px;
-  background: linear-gradient(135deg, #24282a 0%, #3a4042 35%, #5c6366 100%);
+  padding: 40px 0 50px;
+  background: var(--color-dark) url('../images/The Mindful destination tariff 4.jpg') center / cover no-repeat;
   overflow: hidden;
+}
+
+.experiences::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .experiences-inner {
@@ -3613,14 +3625,14 @@ ul {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 48px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
 }
 
 .blog-card-media {
   position: relative;
   display: block;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
@@ -3882,7 +3894,8 @@ ul {
 .impact-inner {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -3905,7 +3918,7 @@ ul {
 .impact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 60px;
+  column-gap: 28px;
 }
 
 .impact-item {
@@ -3918,7 +3931,7 @@ ul {
 
 .impact-item--second {
   justify-self: end;
-  margin-top: 130px;
+  margin-top: 40px;
 }
 
 .impact-label {
@@ -4584,11 +4597,11 @@ ul {
 
 @media (max-width: 1024px) {
   .impact-grid {
-    column-gap: 32px;
+    column-gap: 20px;
   }
 
   .impact-item--second {
-    margin-top: 60px;
+    margin-top: 24px;
   }
 
   .about-us-inner {
@@ -4680,7 +4693,6 @@ ul {
   }
 
   .team-showcase {
-    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
 
@@ -4699,7 +4711,7 @@ ul {
   }
 
   .blog-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 32px;
   }
 
@@ -5246,8 +5258,17 @@ ul {
   }
 
   .team-showcase {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .team-member {
+    flex-direction: column;
+  }
+
+  .team-photo {
+    flex: none;
+    width: 100%;
   }
 
   .exp-hero {
