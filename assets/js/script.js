@@ -259,7 +259,7 @@ function initExperiencesSlider() {
   const nextBtn = document.getElementById('expNext');
   if (!slider) return;
 
-  const DRAG_THRESHOLD = 6;
+  const DRAG_THRESHOLD = 10;
   let isDown = false;
   let hasDragged = false;
   let startX = 0;
@@ -273,6 +273,7 @@ function initExperiencesSlider() {
   }
 
   function onPointerDown(e) {
+    if (e.target.closest('.trip-cta')) return; // never hijack a direct click on the CTA button
     isDown = true;
     hasDragged = false;
     slider.classList.add('is-dragging');
@@ -300,7 +301,7 @@ function initExperiencesSlider() {
 
   slider.querySelectorAll('.trip-card').forEach((card) => {
     card.addEventListener('click', (e) => {
-      if (hasDragged) e.preventDefault();
+      if (hasDragged && !e.target.closest('.trip-cta')) e.preventDefault();
     });
   });
 

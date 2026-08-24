@@ -3310,6 +3310,8 @@ ul {
 }
 
 .trip-cta {
+  position: relative;
+  z-index: 3;
   display: inline-block;
   margin-top: 14px;
   padding: 9px 18px;
@@ -3318,6 +3320,7 @@ ul {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.4px;
+  cursor: pointer;
   transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 
