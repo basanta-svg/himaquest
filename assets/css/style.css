@@ -984,6 +984,14 @@ ul {
   transition: transform var(--transition-med), box-shadow var(--transition-med);
 }
 
+/* Zigzag layout: rows 2 and 4 (members 3-4 and 7-8) mirror photo/caption order */
+.team-showcase .team-member:nth-child(3),
+.team-showcase .team-member:nth-child(4),
+.team-showcase .team-member:nth-child(7),
+.team-showcase .team-member:nth-child(8) {
+  flex-direction: row-reverse;
+}
+
 .team-member:hover {
   transform: translateY(-6px);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
@@ -2592,6 +2600,163 @@ ul {
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
+}
+
+/* Tour hero photo/video gallery + info bar (below the gallery, not overlaid) */
+.tour-gallery-hero {
+  position: relative;
+  padding-top: var(--header-height);
+  background: var(--color-dark);
+}
+
+.tour-gallery-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.tour-gallery-track {
+  display: flex;
+  gap: 2px;
+  height: 65vh;
+  min-height: 420px;
+  max-height: 720px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  cursor: grab;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tour-gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+.tour-gallery-track.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+.tour-gallery-track.is-dragging .tour-gallery-slide {
+  pointer-events: none;
+}
+
+.tour-gallery-slide {
+  position: relative;
+  flex: 0 0 31%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-gray-900);
+  scroll-snap-align: start;
+}
+
+.tour-gallery-slide img,
+.tour-gallery-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tour-gallery-video {
+  position: absolute;
+  inset: 0;
+  display: none;
+  background: #000;
+}
+
+.tour-gallery-slide--video.is-playing .tour-gallery-poster,
+.tour-gallery-slide--video.is-playing .tour-gallery-play {
+  display: none;
+}
+
+.tour-gallery-slide--video.is-playing .tour-gallery-video {
+  display: block;
+}
+
+.tour-gallery-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-dark);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.tour-gallery-play svg {
+  margin-left: 2px;
+}
+
+.tour-gallery-play:hover {
+  background: var(--color-white);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.tour-gallery-arrow {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  color: var(--color-dark);
+}
+
+.tour-gallery-arrow:hover {
+  background: var(--color-white);
+  border: none;
+}
+
+.tour-gallery-arrow--prev {
+  left: 16px;
+}
+
+.tour-gallery-arrow--next {
+  right: 16px;
+}
+
+.tour-hero-info {
+  padding: 40px 24px 0;
+  background: var(--color-white);
+}
+
+.tour-hero-info-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.tour-hero-info .tour-hero-badge {
+  border-color: var(--color-gray-300);
+  color: var(--color-gray-700);
+}
+
+.tour-hero-info h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 44px);
+  letter-spacing: 0.3px;
+  line-height: 1.15;
+  color: var(--color-gray-900);
+  margin-bottom: 16px;
+  max-width: 18ch;
+}
+
+.tour-hero-info p {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--color-gray-700);
+  max-width: 640px;
 }
 
 .tour-detail {
@@ -4569,6 +4734,10 @@ ul {
     column-gap: 24px;
   }
 
+  .tour-gallery-slide {
+    flex-basis: 46%;
+  }
+
   .about-us-inner {
     grid-template-columns: 1fr;
     gap: 64px;
@@ -5227,7 +5396,11 @@ ul {
     gap: 20px;
   }
 
-  .team-member {
+  .team-member,
+  .team-showcase .team-member:nth-child(3),
+  .team-showcase .team-member:nth-child(4),
+  .team-showcase .team-member:nth-child(7),
+  .team-showcase .team-member:nth-child(8) {
     flex-direction: column;
   }
 
@@ -5242,6 +5415,28 @@ ul {
   }
 
   .exp-hero-content h1 {
+    max-width: none;
+  }
+
+  .tour-gallery-hero {
+    padding-top: var(--header-height);
+  }
+
+  .tour-gallery-track {
+    gap: 2px;
+    height: 48vh;
+    min-height: 320px;
+  }
+
+  .tour-gallery-slide {
+    flex-basis: 88%;
+  }
+
+  .tour-hero-info {
+    padding: 28px 16px 0;
+  }
+
+  .tour-hero-info h1 {
     max-width: none;
   }
 

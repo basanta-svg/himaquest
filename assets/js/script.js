@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initNewsletterForm();
   initFooterYear();
+  initTourGallery();
 });
 
 /* Sticky header: transparent at top, solid on scroll */
@@ -314,6 +315,82 @@ function initExperiencesSlider() {
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
       slider.scrollBy({ left: step(), behavior: 'smooth' });
+    });
+  }
+}
+
+/* Tour hero photo/video gallery: drag-to-scroll strip, arrow nav, and play-in-place video */
+function initTourGallery() {
+  const track = document.getElementById('lodgeGalleryTrack');
+  const prevBtn = document.getElementById('lodgeGalleryPrev');
+  const nextBtn = document.getElementById('lodgeGalleryNext');
+  if (!track) return;
+
+  const DRAG_THRESHOLD = 10;
+  let isDown = false;
+  let hasDragged = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+
+  function step() {
+    const slide = track.querySelector('.tour-gallery-slide');
+    if (!slide) return track.clientWidth * 0.8;
+    const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '0');
+    return slide.getBoundingClientRect().width + gap;
+  }
+
+  function onPointerDown(e) {
+    if (e.target.closest('.tour-gallery-play')) return;
+    isDown = true;
+    hasDragged = false;
+    track.classList.add('is-dragging');
+    startX = e.pageX;
+    startScrollLeft = track.scrollLeft;
+  }
+
+  function onPointerMove(e) {
+    if (!isDown) return;
+    const delta = e.pageX - startX;
+    if (Math.abs(delta) > DRAG_THRESHOLD) hasDragged = true;
+    track.scrollLeft = startScrollLeft - delta;
+  }
+
+  function endDrag() {
+    if (!isDown) return;
+    isDown = false;
+    track.classList.remove('is-dragging');
+  }
+
+  track.addEventListener('mousedown', onPointerDown);
+  window.addEventListener('mousemove', onPointerMove);
+  window.addEventListener('mouseup', endDrag);
+  track.addEventListener('mouseleave', endDrag);
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      track.scrollBy({ left: -step(), behavior: 'smooth' });
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      track.scrollBy({ left: step(), behavior: 'smooth' });
+    });
+  }
+
+  const videoSlide = track.querySelector('.tour-gallery-slide--video');
+  const playBtn = track.querySelector('.tour-gallery-play');
+  const video = track.querySelector('.tour-gallery-video');
+
+  if (videoSlide && playBtn && video) {
+    playBtn.addEventListener('click', () => {
+      if (hasDragged) return;
+      videoSlide.classList.add('is-playing');
+      video.play();
+    });
+
+    video.addEventListener('pause', () => {
+      if (video.currentTime === 0) videoSlide.classList.remove('is-playing');
     });
   }
 }
