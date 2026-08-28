@@ -380,17 +380,24 @@ function initTourGallery() {
 
   const videoSlide = track.querySelector('.tour-gallery-slide--video');
   const playBtn = track.querySelector('.tour-gallery-play');
-  const video = track.querySelector('.tour-gallery-video');
+  const youtubeId = videoSlide ? videoSlide.dataset.youtubeId : null;
 
-  if (videoSlide && playBtn && video) {
+  if (videoSlide && playBtn && youtubeId) {
     playBtn.addEventListener('click', () => {
       if (hasDragged) return;
-      videoSlide.classList.add('is-playing');
-      video.play();
-    });
+      if (videoSlide.querySelector('.tour-gallery-embed')) return;
 
-    video.addEventListener('pause', () => {
-      if (video.currentTime === 0) videoSlide.classList.remove('is-playing');
+      const iframe = document.createElement('iframe');
+      iframe.className = 'tour-gallery-embed';
+      iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+      iframe.title = 'YouTube video player';
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+
+      videoSlide.appendChild(iframe);
+      videoSlide.classList.add('is-playing');
     });
   }
 }
