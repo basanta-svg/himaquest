@@ -2727,7 +2727,7 @@ ul {
 }
 
 .tour-hero-info-inner {
-  max-width: 1400px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
@@ -2744,7 +2744,7 @@ ul {
   line-height: 1.15;
   color: var(--color-gray-900);
   margin-bottom: 16px;
-  max-width: 18ch;
+  max-width: none;
 }
 
 .tour-hero-info p {
@@ -2753,7 +2753,7 @@ ul {
   font-size: 17px;
   line-height: 1.75;
   color: var(--color-gray-700);
-  max-width: 640px;
+  max-width: none;
 }
 
 .tour-detail {
