@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroSlider();
   initExperiencesSlider();
   initDestinationsSlider();
+  initDeparturesSlider();
   initFaqToggle();
   initLoadMore();
   initBlogFilter();
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNewsletterForm();
   initFooterYear();
   initTourGallery();
+  initEnquireBandVideo();
 });
 
 /* Sticky header: transparent at top, solid on scroll */
@@ -319,6 +321,72 @@ function initExperiencesSlider() {
   }
 }
 
+/* Mouse/touch draggable fixed-departures slider with arrow-button navigation */
+function initDeparturesSlider() {
+  const slider = document.getElementById('departuresSlider');
+  const prevBtn = document.getElementById('departuresPrev');
+  const nextBtn = document.getElementById('departuresNext');
+  if (!slider) return;
+
+  const DRAG_THRESHOLD = 10;
+  let isDown = false;
+  let hasDragged = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+
+  function step() {
+    const card = slider.querySelector('.departure-card');
+    if (!card) return slider.clientWidth * 0.8;
+    const gap = parseFloat(getComputedStyle(slider).columnGap || getComputedStyle(slider).gap || '0');
+    return card.getBoundingClientRect().width + gap;
+  }
+
+  function onPointerDown(e) {
+    if (e.target.closest('.departure-card-cta')) return; // never hijack a direct click on the CTA
+    isDown = true;
+    hasDragged = false;
+    slider.classList.add('is-dragging');
+    startX = e.pageX;
+    startScrollLeft = slider.scrollLeft;
+  }
+
+  function onPointerMove(e) {
+    if (!isDown) return;
+    const delta = e.pageX - startX;
+    if (Math.abs(delta) > DRAG_THRESHOLD) hasDragged = true;
+    slider.scrollLeft = startScrollLeft - delta;
+  }
+
+  function endDrag() {
+    if (!isDown) return;
+    isDown = false;
+    slider.classList.remove('is-dragging');
+  }
+
+  slider.addEventListener('mousedown', onPointerDown);
+  window.addEventListener('mousemove', onPointerMove);
+  window.addEventListener('mouseup', endDrag);
+  slider.addEventListener('mouseleave', endDrag);
+
+  slider.querySelectorAll('.departure-card').forEach((card) => {
+    card.addEventListener('click', (e) => {
+      if (hasDragged && !e.target.closest('.departure-card-cta')) e.preventDefault();
+    });
+  });
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: -step(), behavior: 'smooth' });
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      slider.scrollBy({ left: step(), behavior: 'smooth' });
+    });
+  }
+}
+
 /* Tour hero photo/video gallery: drag-to-scroll strip, arrow nav, and play-in-place video */
 function initTourGallery() {
   const track = document.getElementById('lodgeGalleryTrack');
@@ -494,4 +562,27 @@ function initContactForm() {
 function initFooterYear() {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+}
+
+/* Video background for every "Get in touch" enquire band, site-wide — injected here
+   rather than duplicated in every page's markup so there's one source of truth. */
+function initEnquireBandVideo() {
+  const VIDEO_SRC = "assets/video/Bhutan%20Believe_%20Land%20of%20the%20Thunder%20Dragon%20I%20New%20Brand%20Film.mp4";
+
+  document.querySelectorAll('.enquire-band').forEach((band) => {
+    if (band.querySelector('.enquire-band-video')) return;
+
+    const video = document.createElement('video');
+    video.className = 'enquire-band-video';
+    video.src = VIDEO_SRC;
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.setAttribute('aria-hidden', 'true');
+    video.setAttribute('tabindex', '-1');
+
+    band.insertBefore(video, band.firstChild);
+    video.play().catch(() => {}); // ignore autoplay rejection (e.g. low-power mode)
+  });
 }

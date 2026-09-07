@@ -109,29 +109,29 @@ nav a,
 
 @media (max-width: 767px) {
   h1 {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
   }
 
   h2 {
-    font-size: 1.725rem;
+    font-size: 1.55rem;
   }
 
   h3 {
-    font-size: 1.294rem;
+    font-size: 1.18rem;
   }
 
   p {
-    font-size: 1.078rem;
+    font-size: 1rem;
     line-height: 1.5;
   }
 
   blockquote {
-    font-size: 1.265rem;
+    font-size: 1.15rem;
   }
 
   .btn,
   nav a {
-    font-size: 0.934rem;
+    font-size: 0.86rem;
   }
 }
 
@@ -984,9 +984,7 @@ ul {
   transition: transform var(--transition-med), box-shadow var(--transition-med);
 }
 
-/* Zigzag layout: rows 2 and 4 (members 3-4 and 7-8) mirror photo/caption order */
-.team-showcase .team-member:nth-child(3),
-.team-showcase .team-member:nth-child(4),
+/* Zigzag layout: row 4 (members 7-8) mirrors photo/caption order */
 .team-showcase .team-member:nth-child(7),
 .team-showcase .team-member:nth-child(8) {
   flex-direction: row-reverse;
@@ -1538,6 +1536,59 @@ ul {
   background: var(--color-white);
 }
 
+/* Huge featured post at the top of The Journal, above the regular card grid */
+.blog-feature {
+  display: block;
+  max-width: 1400px;
+  margin: 0 auto 72px;
+}
+
+.blog-feature-media {
+  position: relative;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+}
+
+.blog-feature-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-med);
+}
+
+.blog-feature:hover .blog-feature-media img {
+  transform: scale(1.04);
+}
+
+.blog-feature-body {
+  padding-top: 32px;
+  max-width: none;
+}
+
+.blog-feature-body h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 3.6vw, 42px);
+  line-height: 1.25;
+  letter-spacing: 0.2px;
+  color: var(--color-gray-900);
+  margin: 14px 0 16px;
+  transition: color var(--transition-fast);
+}
+
+.blog-feature:hover .blog-feature-body h2 {
+  color: var(--color-accent-hover);
+}
+
+.blog-feature-body p {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--color-gray-700);
+  margin-bottom: 22px;
+}
+
 /* ===========================
    Contact Page
    =========================== */
@@ -2065,6 +2116,8 @@ ul {
 }
 
 .departure-card-cta {
+  position: relative;
+  z-index: 3;
   align-self: flex-start;
   margin-top: auto;
   display: inline-flex;
@@ -2080,6 +2133,7 @@ ul {
   letter-spacing: 1px;
   text-transform: uppercase;
   white-space: nowrap;
+  cursor: pointer;
   transition: color var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
@@ -2109,6 +2163,60 @@ ul {
   .departure-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ===========================
+   Homepage Fixed Departures (slider)
+   =========================== */
+
+.departures {
+  padding: 110px 24px;
+  background: var(--color-offwhite);
+}
+
+.departures-subtitle {
+  margin-top: 16px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: var(--color-gray-500);
+}
+
+.departures-slider-wrap {
+  position: relative;
+  max-width: 1400px;
+  margin: 40px auto 0;
+}
+
+.departures-grid {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  cursor: grab;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.departures-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.departures-grid.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+.departures-grid.is-dragging .departure-card {
+  pointer-events: none;
+}
+
+.departures-grid .departure-card {
+  flex: 0 0 360px;
+  scroll-snap-align: start;
 }
 
 /* ===========================
@@ -2609,6 +2717,28 @@ ul {
   background: var(--color-dark);
 }
 
+/* Same gallery, embedded mid-page (e.g. above the itinerary) instead of as the
+   page's top hero — no fixed-header offset, and a fixed, more modest height. */
+.tour-gallery-hero--inline {
+  padding-top: 0;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.tour-gallery-hero--inline .tour-gallery-track {
+  height: 340px;
+  min-height: 0;
+  max-height: none;
+}
+
+/* Same gallery, full-width, placed after the tour-detail section (below the
+   enquiry form and sidebar) rather than as the page's top hero. Doubled-up
+   selector so it beats the mobile ".tour-gallery-hero" header-offset rule
+   regardless of source order. */
+.tour-gallery-hero.tour-gallery-hero--footer {
+  padding-top: 0;
+}
+
 .tour-gallery-wrap {
   position: relative;
   width: 100%;
@@ -2770,6 +2900,12 @@ ul {
   align-items: start;
 }
 
+/* No sidebar on this page — let the main column use the full width instead
+   of leaving the 3fr sidebar track empty. */
+.tour-detail-inner--full {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .tour-detail-main {
   min-width: 0;
 }
@@ -2829,6 +2965,12 @@ ul {
   border-radius: 999px;
 }
 
+.tour-facts-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
 .tour-note {
   margin-top: 24px;
   padding: 20px 0;
@@ -2881,6 +3023,61 @@ ul {
   flex: none;
   margin-top: 2px;
   color: var(--color-accent);
+}
+
+.tour-detail-subhead {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--color-gray-900);
+  margin-top: 28px;
+  margin-bottom: 14px;
+}
+
+.tour-detail-block .tour-detail-subhead:first-child {
+  margin-top: 0;
+}
+
+.tour-excludes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 32px;
+}
+
+/* Included/Excluded cost breakdown: three columns, each its own subhead + a
+   single-column stacked list underneath. */
+.tour-cost-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 32px;
+  align-items: start;
+}
+
+.tour-cost-column .tour-detail-subhead {
+  margin-top: 0;
+}
+
+.tour-highlights--stack {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.tour-excludes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--color-gray-700);
+}
+
+.tour-excludes li svg {
+  flex: none;
+  margin-top: 2px;
+  color: #c0392b;
 }
 
 .itinerary-list .faq-item:first-child {
@@ -3928,6 +4125,151 @@ ul {
 }
 
 /* ===========================
+   Homepage Journal — featured + list layout
+   =========================== */
+
+.journal-layout {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.journal-featured {
+  display: block;
+}
+
+.journal-featured-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.journal-featured-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-med);
+}
+
+.journal-featured:hover .journal-featured-media img {
+  transform: scale(1.05);
+}
+
+.journal-featured-body {
+  padding-top: 24px;
+}
+
+.journal-date {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+  margin-bottom: 14px;
+}
+
+.journal-date svg {
+  flex: none;
+  color: var(--color-accent-hover);
+}
+
+.journal-featured-body h3 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.6vw, 30px);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
+  color: var(--color-gray-900);
+  margin-bottom: 16px;
+  transition: color var(--transition-fast);
+}
+
+.journal-featured:hover .journal-featured-body h3 {
+  color: var(--color-accent-hover);
+}
+
+.journal-featured-body p {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--color-gray-700);
+  margin-bottom: 22px;
+}
+
+.journal-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.journal-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.journal-list-item:first-child {
+  padding-top: 0;
+}
+
+.journal-list-item:last-child {
+  border-bottom: none;
+}
+
+.journal-list-item img {
+  flex: none;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  transition: transform var(--transition-med);
+}
+
+.journal-list-item:hover img {
+  transform: scale(1.06);
+}
+
+.journal-list-item-body {
+  min-width: 0;
+}
+
+.journal-list-item-body .journal-date {
+  margin-bottom: 10px;
+}
+
+.journal-list-item h4 {
+  font-family: var(--font-display);
+  font-size: 16.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+  color: var(--color-gray-900);
+  margin-bottom: 8px;
+  transition: color var(--transition-fast);
+}
+
+.journal-list-item p {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-gray-700);
+}
+
+.journal-list-item:hover h4 {
+  color: var(--color-accent-hover);
+}
+
+/* ===========================
    FAQ
    =========================== */
 
@@ -4224,6 +4566,16 @@ ul {
   background-position: center;
   color: var(--color-white);
   overflow: hidden;
+}
+
+.enquire-band-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 }
 
 /* Full-bleed overlay across the whole section — previously only the
@@ -4637,6 +4989,11 @@ ul {
     flex-basis: 46%;
   }
 
+  .tour-cost-columns {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
   .about-us-inner {
     grid-template-columns: 1fr;
     gap: 64px;
@@ -4746,6 +5103,11 @@ ul {
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+  }
+
+  .journal-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .experience-grid {
@@ -5160,6 +5522,14 @@ ul {
     padding: 64px 20px 80px;
   }
 
+  .blog-feature {
+    margin-bottom: 48px;
+  }
+
+  .blog-feature-media {
+    aspect-ratio: 4 / 3;
+  }
+
   .luxury-collection {
     padding: 64px 20px 80px;
   }
@@ -5229,6 +5599,10 @@ ul {
     grid-template-columns: 1fr;
   }
 
+  .tour-excludes {
+    grid-template-columns: 1fr;
+  }
+
   .tour-detail-block {
     margin-top: 40px;
   }
@@ -5248,6 +5622,14 @@ ul {
 
   .dest-card {
     flex-basis: 76vw;
+  }
+
+  .departures-grid .departure-card {
+    flex-basis: 84vw;
+  }
+
+  .departures {
+    padding: 70px 20px;
   }
 
   .dest-arrow--prev {
@@ -5284,8 +5666,6 @@ ul {
   }
 
   .team-member,
-  .team-showcase .team-member:nth-child(3),
-  .team-showcase .team-member:nth-child(4),
   .team-showcase .team-member:nth-child(7),
   .team-showcase .team-member:nth-child(8) {
     flex-direction: column;
@@ -5313,6 +5693,10 @@ ul {
     gap: 2px;
     height: 48vh;
     min-height: 320px;
+  }
+
+  .tour-gallery-hero--inline .tour-gallery-track {
+    height: 260px;
   }
 
   .tour-gallery-slide {
@@ -5357,6 +5741,16 @@ ul {
 
   .blog-grid {
     grid-template-columns: 1fr;
+  }
+
+  .journal-list-item img {
+    width: 76px;
+    height: 76px;
+  }
+
+  .journal-list-item {
+    gap: 14px;
+    padding: 20px 0;
   }
 
   .experience-grid {
@@ -5420,6 +5814,56 @@ ul {
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+/* Placed last so it wins the cascade over every earlier same-specificity
+   rule for these properties: a slightly smaller header bar/logo, and a
+   trim on the biggest hero/section headings, specifically on mobile. */
+@media (max-width: 767px) {
+  :root {
+    --header-height: 68px;
+  }
+
+  .site-header.is-scrolled {
+    height: 58px;
+  }
+
+  .logo-img {
+    height: 32px;
+  }
+
+  .hero-title {
+    font-size: clamp(22px, 4.2vw, 44px);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(11px, 1.3vw, 16px);
+  }
+
+  .intro-title {
+    font-size: clamp(17px, 2.8vw, 26px);
+  }
+
+  .section-title,
+  .impact-title {
+    font-size: clamp(16px, 2.4vw, 24px);
+  }
+
+  .faq-title {
+    font-size: clamp(21px, 3.4vw, 38px);
+  }
+
+  .exp-hero-content h1 {
+    font-size: clamp(24px, 4.4vw, 50px);
+  }
+
+  .tour-hero-info h1 {
+    font-size: clamp(22px, 4vw, 44px);
+  }
+
+  .blog-feature-body h2 {
+    font-size: clamp(22px, 3.6vw, 42px);
   }
 }
 
