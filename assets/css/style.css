@@ -970,24 +970,18 @@ ul {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
 }
 
 .team-member {
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background: var(--color-white);
   border: 1px solid var(--color-gray-200);
   overflow: hidden;
   transition: transform var(--transition-med), box-shadow var(--transition-med);
-}
-
-/* Zigzag layout: row 4 (members 7-8) mirrors photo/caption order */
-.team-showcase .team-member:nth-child(7),
-.team-showcase .team-member:nth-child(8) {
-  flex-direction: row-reverse;
 }
 
 .team-member:hover {
@@ -997,7 +991,7 @@ ul {
 
 .team-photo {
   position: relative;
-  flex: 0 0 42%;
+  width: 100%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
   background: var(--color-gray-900);
@@ -1019,8 +1013,7 @@ ul {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 28px 32px;
+  padding: 24px 26px;
 }
 
 .team-role {
@@ -5118,7 +5111,8 @@ ul {
   }
 
   .team-showcase {
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 
   .exp-showcase-grid {
@@ -5698,17 +5692,6 @@ ul {
   .team-showcase {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-
-  .team-member,
-  .team-showcase .team-member:nth-child(7),
-  .team-showcase .team-member:nth-child(8) {
-    flex-direction: column;
-  }
-
-  .team-photo {
-    flex: none;
-    width: 100%;
   }
 
   .exp-hero {
