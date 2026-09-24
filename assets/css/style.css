@@ -3033,6 +3033,70 @@ ul {
   margin-top: 0;
 }
 
+.tour-pdf-cta-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 28px 32px;
+  border: 1px solid var(--color-gray-200);
+  background: var(--color-offwhite);
+}
+
+.tour-pdf-cta-icon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid var(--color-gray-900);
+  color: var(--color-gray-900);
+}
+
+.tour-pdf-cta-text {
+  flex: 1 1 260px;
+}
+
+.tour-pdf-cta-text h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16.5px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--color-gray-900);
+  margin-bottom: 6px;
+}
+
+.tour-pdf-cta-text p {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--color-gray-500);
+}
+
+.tour-pdf-cta-actions {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tour-pdf-btn {
+  gap: 9px;
+}
+
+.tour-pdf-btn--ghost {
+  border-color: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+.tour-pdf-btn--ghost:hover {
+  background: var(--color-white);
+  color: var(--color-gray-900);
+  border-color: var(--color-gray-900);
+}
+
 .tour-excludes {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -4951,36 +5015,17 @@ ul {
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 14px;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
   padding: 26px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-family: var(--font-body);
   font-style: normal;
   font-size: 15.5px;
   color: rgba(255, 255, 255, 0.45);
-}
-
-.footer-legal {
-  display: flex;
-  gap: 24px;
-  font-family: var(--font-body);
-  font-style: normal;
-  font-size: 15.5px;
-}
-
-.footer-legal a {
-  font-family: var(--font-body);
-  font-style: normal;
-  font-size: 15.5px;
-  color: rgba(255, 255, 255, 0.45);
-  transition: color var(--transition-fast);
-}
-
-.footer-legal a:hover {
-  color: var(--color-white);
 }
 
 .footer-credit,
@@ -5636,6 +5681,20 @@ ul {
     margin-top: 40px;
   }
 
+  .tour-pdf-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+
+  .tour-pdf-cta-actions {
+    width: 100%;
+  }
+
+  .tour-pdf-cta-actions .btn-pill {
+    flex: 1 1 auto;
+  }
+
   .tour-cost-card {
     padding: 24px;
   }
@@ -5827,11 +5886,6 @@ ul {
 
   .footer-partners {
     justify-content: center;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
   }
 }
 
