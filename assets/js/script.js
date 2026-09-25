@@ -97,6 +97,7 @@ function initHeroSlider() {
   const titleEl = document.getElementById('heroTitle');
   const subtitleEl = document.getElementById('heroSubtitle');
   const ctaEl = heroContent ? heroContent.querySelector('.hero-cta') : null;
+  const ctaLinkEl = document.getElementById('heroCta');
   const animatedEls = [titleEl, subtitleEl, ctaEl].filter(Boolean);
   const ENTER_DELAYS = [300, 500, 700];
   if (!slider) return;
@@ -145,6 +146,8 @@ function initHeroSlider() {
   function updateText(slide) {
     const nextTitle = slide.dataset.title;
     const nextSubtitle = slide.dataset.subtitle;
+    const nextCtaText = slide.dataset.ctaText;
+    const nextCtaHref = slide.dataset.ctaHref;
     if (!heroContent) return;
 
     clearDelays();
@@ -153,6 +156,8 @@ function initHeroSlider() {
     setTimeout(() => {
       if (titleEl && nextTitle !== undefined) titleEl.textContent = nextTitle;
       if (subtitleEl && nextSubtitle !== undefined) subtitleEl.textContent = nextSubtitle;
+      if (ctaLinkEl && nextCtaText !== undefined) ctaLinkEl.textContent = nextCtaText;
+      if (ctaLinkEl && nextCtaHref !== undefined) ctaLinkEl.setAttribute('href', nextCtaHref);
       void heroContent.offsetWidth;
       setEnterDelays();
       requestAnimationFrame(() => heroContent.classList.add('is-visible'));
@@ -411,7 +416,6 @@ function initTourGallery() {
     if (e.target.closest('.tour-gallery-play')) return;
     isDown = true;
     hasDragged = false;
-    track.classList.add('is-dragging');
     startX = e.pageX;
     startScrollLeft = track.scrollLeft;
   }
@@ -419,7 +423,12 @@ function initTourGallery() {
   function onPointerMove(e) {
     if (!isDown) return;
     const delta = e.pageX - startX;
-    if (Math.abs(delta) > DRAG_THRESHOLD) hasDragged = true;
+    if (Math.abs(delta) > DRAG_THRESHOLD) {
+      // Only now treat this as an actual drag — setting pointer-events:none
+      // (via is-dragging) any earlier would swallow the click on a plain tap.
+      hasDragged = true;
+      track.classList.add('is-dragging');
+    }
     track.scrollLeft = startScrollLeft - delta;
   }
 
@@ -468,6 +477,84 @@ function initTourGallery() {
       videoSlide.classList.add('is-playing');
     });
   }
+
+  /* Lightbox: click any non-video photo to view it full-size with nav + close */
+  const photos = Array.from(track.querySelectorAll('.tour-gallery-slide:not(.tour-gallery-slide--video) img'));
+  if (!photos.length) return;
+
+  const lightbox = document.createElement('div');
+  lightbox.className = 'gallery-lightbox';
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightbox.innerHTML = `
+    <button class="gallery-lightbox-close" type="button" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M5 5l14 14M19 5L5 19" />
+      </svg>
+    </button>
+    <button class="gallery-lightbox-arrow gallery-lightbox-arrow--prev" type="button" aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </button>
+    <img class="gallery-lightbox-img" src="" alt="">
+    <button class="gallery-lightbox-arrow gallery-lightbox-arrow--next" type="button" aria-label="Next photo">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9 18l6-6-6-6" />
+      </svg>
+    </button>
+    <span class="gallery-lightbox-counter"></span>
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = lightbox.querySelector('.gallery-lightbox-img');
+  const lightboxCounter = lightbox.querySelector('.gallery-lightbox-counter');
+  const closeBtn = lightbox.querySelector('.gallery-lightbox-close');
+  const prevPhotoBtn = lightbox.querySelector('.gallery-lightbox-arrow--prev');
+  const nextPhotoBtn = lightbox.querySelector('.gallery-lightbox-arrow--next');
+  let lightboxIndex = 0;
+
+  function showPhoto(index) {
+    lightboxIndex = (index + photos.length) % photos.length;
+    const img = photos[lightboxIndex];
+    lightboxImg.src = img.currentSrc || img.src;
+    lightboxImg.alt = img.alt || '';
+    lightboxCounter.textContent = `${lightboxIndex + 1} / ${photos.length}`;
+  }
+
+  function openLightbox(index) {
+    showPhoto(index);
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+  }
+
+  photos.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      if (hasDragged) return;
+      openLightbox(index);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+  prevPhotoBtn.addEventListener('click', () => showPhoto(lightboxIndex - 1));
+  nextPhotoBtn.addEventListener('click', () => showPhoto(lightboxIndex + 1));
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPhoto(lightboxIndex - 1);
+    if (e.key === 'ArrowRight') showPhoto(lightboxIndex + 1);
+  });
 }
 
 /* FAQ accordion: click a question to toggle its answer open/closed */

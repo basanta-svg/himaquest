@@ -33,6 +33,24 @@
   --weight-semibold: 600;
   --weight-bold: 700;
 
+  /* Type Scale — uniform sizes for repeated text roles across the site.
+     Use these instead of one-off values so every eyebrow/subtitle/section
+     title/card title matches wherever it appears. */
+  --fs-eyebrow: 12.5px;
+  /* Small uppercase label above a section title */
+  --fs-subtitle: 15px;
+  /* Intro sentence under a section title */
+  --fs-section-title: clamp(19px, 2.4vw, 24px);
+  /* H2 section headings */
+  --fs-hero-title: clamp(30px, 4.4vw, 50px);
+  /* H1 page-hero headings */
+  --fs-card-title-sm: 17px;
+  /* Compact cards: sidebar items, cost/enquire cards, contact boxes */
+  --fs-card-title-md: 19.5px;
+  /* Standard grid cards: tours, destinations, activities, blog */
+  --fs-card-title-lg: clamp(22px, 2.6vw, 26px);
+  /* Feature cards: luxury lodges, festival stories, journal features */
+
   --header-height: 88px;
   --transition-fast: 200ms ease;
   --transition-med: 400ms ease;
@@ -692,7 +710,7 @@ ul {
 .intro-eyebrow {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 12.5px;
+  font-size: var(--fs-eyebrow);
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -703,7 +721,7 @@ ul {
 .intro-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(20px, 2.8vw, 26px);
+  font-size: var(--fs-section-title);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -787,7 +805,7 @@ ul {
 .about-us-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(24px, 3.2vw, 34px);
+  font-size: var(--fs-section-title);
   letter-spacing: 0.3px;
   text-transform: uppercase;
   line-height: 1.25;
@@ -960,7 +978,7 @@ ul {
 .team-subtitle {
   margin-top: 16px;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: var(--fs-subtitle);
   font-weight: 500;
   letter-spacing: 0.4px;
   color: var(--color-gray-500);
@@ -1030,7 +1048,7 @@ ul {
 .team-caption h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 18px;
+  font-size: var(--fs-card-title-md);
   letter-spacing: 0.3px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -1120,7 +1138,7 @@ ul {
 .exp-hero-content h1 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(30px, 4.4vw, 50px);
+  font-size: var(--fs-hero-title);
   letter-spacing: 0.3px;
   text-transform: none;
   line-height: 1.15;
@@ -1280,7 +1298,7 @@ ul {
 
 .season-card h3 {
   font-family: var(--font-display);
-  font-size: 18.5px;
+  font-size: var(--fs-card-title-md);
   font-weight: 600;
   letter-spacing: 0.3px;
   text-transform: uppercase;
@@ -1455,7 +1473,7 @@ ul {
 
 .history-body h3 {
   font-family: var(--font-display);
-  font-size: 18.5px;
+  font-size: var(--fs-card-title-md);
   font-weight: 600;
   letter-spacing: 0.2px;
   text-transform: uppercase;
@@ -1693,7 +1711,7 @@ ul {
 .contact-info-box h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 17px;
+  font-size: var(--fs-card-title-sm);
   letter-spacing: 0.4px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -1825,7 +1843,7 @@ ul {
 
 .tour-card-body h3 {
   font-family: var(--font-display);
-  font-size: 20.5px;
+  font-size: var(--fs-card-title-md);
   font-weight: 600;
   letter-spacing: 0.2px;
   line-height: 1.3;
@@ -1938,7 +1956,7 @@ ul {
 
 .activity-card-body h3 {
   font-family: var(--font-display);
-  font-size: 20.5px;
+  font-size: var(--fs-card-title-md);
   font-weight: 600;
   letter-spacing: 0.2px;
   line-height: 1.3;
@@ -2102,7 +2120,7 @@ ul {
 .departure-card-body h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 17px;
+  font-size: var(--fs-card-title-sm);
   letter-spacing: 0.2px;
   line-height: 1.35;
   color: var(--color-gray-900);
@@ -2170,7 +2188,7 @@ ul {
 .departures-subtitle {
   margin-top: 16px;
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: var(--fs-subtitle);
   font-weight: 500;
   letter-spacing: 0.4px;
   color: var(--color-gray-500);
@@ -2243,7 +2261,7 @@ ul {
   margin: 40px 0 16px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 23px;
+  font-size: var(--fs-card-title-lg);
   letter-spacing: 0.3px;
   color: var(--color-gray-900);
 }
@@ -2335,7 +2353,7 @@ ul {
 .festival-entry h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 20.5px;
+  font-size: var(--fs-card-title-md);
   letter-spacing: 0.2px;
   color: var(--color-gray-900);
 }
@@ -2531,7 +2549,7 @@ ul {
   font-family: var(--font-accent);
   font-style: italic;
   font-weight: 600;
-  font-size: 26.5px;
+  font-size: var(--fs-card-title-lg);
   letter-spacing: 0.2px;
   line-height: 1.3;
   color: var(--color-white);
@@ -2638,7 +2656,7 @@ ul {
   font-style: normal;
   font-weight: 700;
   color: var(--color-white);
-  font-size: 20.5px;
+  font-size: var(--fs-card-title-md);
   letter-spacing: 0.2px;
   margin-bottom: 0;
 }
@@ -2844,6 +2862,122 @@ ul {
   right: 16px;
 }
 
+.tour-gallery-slide img {
+  cursor: zoom-in;
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.94);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-med);
+}
+
+.gallery-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery-lightbox-img {
+  max-width: min(92vw, 1400px);
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.gallery-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.gallery-lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.gallery-lightbox-arrow:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.gallery-lightbox-arrow--prev {
+  left: 20px;
+}
+
+.gallery-lightbox-arrow--next {
+  right: 20px;
+}
+
+.gallery-lightbox-counter {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 767px) {
+  .gallery-lightbox-close {
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .gallery-lightbox-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .gallery-lightbox-arrow--prev {
+    left: 8px;
+  }
+
+  .gallery-lightbox-arrow--next {
+    right: 8px;
+  }
+}
+
 .tour-hero-info {
   padding: 40px 24px 0;
   background: var(--color-white);
@@ -2862,7 +2996,7 @@ ul {
 .tour-hero-info h1 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: var(--fs-hero-title);
   letter-spacing: 0.3px;
   line-height: 1.15;
   color: var(--color-gray-900);
@@ -3061,7 +3195,7 @@ ul {
 .tour-pdf-cta-text h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 16.5px;
+  font-size: var(--fs-card-title-sm);
   letter-spacing: 0.3px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -3171,7 +3305,7 @@ ul {
 .tour-cost-card h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 18.5px;
+  font-size: var(--fs-card-title-sm);
   letter-spacing: 0.2px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -3196,7 +3330,7 @@ ul {
 .tour-enquire-card h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 18.5px;
+  font-size: var(--fs-card-title-sm);
   letter-spacing: 0.2px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -3349,7 +3483,7 @@ ul {
 .section-eyebrow {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 12.5px;
+  font-size: var(--fs-eyebrow);
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -3360,7 +3494,7 @@ ul {
 .section-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(19px, 2.4vw, 24px);
+  font-size: var(--fs-section-title);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -3477,7 +3611,7 @@ ul {
 
 .dest-card-info h3 {
   font-family: var(--font-display);
-  font-size: 19.5px;
+  font-size: var(--fs-card-title-md);
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -3585,7 +3719,7 @@ ul {
   margin-top: 18px;
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 17px;
+  font-size: var(--fs-subtitle);
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.65);
 }
@@ -3679,7 +3813,7 @@ ul {
 
 .trip-card-info h3 {
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: var(--fs-card-title-sm);
   font-weight: 600;
   letter-spacing: 0.3px;
   text-transform: uppercase;
@@ -3806,7 +3940,7 @@ ul {
 .why-us-subtitle {
   margin-top: 16px;
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: var(--fs-subtitle);
   font-weight: 500;
   letter-spacing: 0.4px;
   color: var(--color-gray-500);
@@ -3849,7 +3983,7 @@ ul {
 
 .why-us-item h3 {
   font-family: var(--font-display);
-  font-size: 17px;
+  font-size: var(--fs-card-title-sm);
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -3987,7 +4121,7 @@ ul {
 .experience-overlay h3 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 21px;
+  font-size: var(--fs-card-title-sm);
   letter-spacing: 0.2px;
   line-height: 1.25;
   color: var(--color-white);
@@ -4058,7 +4192,7 @@ ul {
 .blog-subtitle {
   margin-top: 16px;
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: var(--fs-subtitle);
   font-weight: 500;
   letter-spacing: 0.4px;
   color: var(--color-gray-500);
@@ -4134,7 +4268,7 @@ ul {
 
 .blog-card-body h3 {
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: var(--fs-card-title-md);
   font-weight: 700;
   letter-spacing: 0.1px;
   line-height: 1.4;
@@ -4363,7 +4497,7 @@ ul {
   font-family: var(--font-display);
   font-weight: 700;
   font-style: normal;
-  font-size: clamp(19px, 2.4vw, 24px);
+  font-size: var(--fs-section-title);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -4394,7 +4528,7 @@ ul {
 .affiliates-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(19px, 2.4vw, 24px);
+  font-size: var(--fs-section-title);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--color-gray-900);
@@ -4495,7 +4629,7 @@ ul {
 .faq-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(26px, 3.4vw, 38px);
+  font-size: var(--fs-section-title);
   letter-spacing: 0.3px;
   text-transform: uppercase;
   line-height: 1.25;
@@ -5024,7 +5158,7 @@ ul {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 15.5px;
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.45);
 }
 
@@ -5032,13 +5166,13 @@ ul {
 .footer-bottom>p {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 15.5px;
+  font-size: 13px;
 }
 
 .footer-credit a {
   font-family: var(--font-body);
   font-style: normal;
-  font-size: 15.5px;
+  font-size: 13px;
   color: rgba(255, 255, 255, 0.6);
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   transition: color var(--transition-fast), border-color var(--transition-fast);
@@ -5710,6 +5844,7 @@ ul {
 
   .dest-card {
     flex-basis: 76vw;
+    aspect-ratio: 3 / 4.6;
   }
 
   .departures-grid .departure-card {
@@ -5845,9 +5980,25 @@ ul {
     gap: 0;
   }
 
+  .impact {
+    /* Extra top/bottom clearance so the tall, narrow branch graphics have
+       room to float without overlapping the title or the last paragraph. */
+    padding: 190px 24px 210px;
+  }
+
   .impact-leaf {
-    width: 90px;
+    width: 56px;
     opacity: 1;
+  }
+
+  .impact-leaf--left {
+    top: 24px;
+    left: 10px;
+  }
+
+  .impact-leaf--right {
+    bottom: 24px;
+    right: 10px;
   }
 
   .impact-grid {
@@ -5913,25 +6064,17 @@ ul {
     font-size: clamp(11px, 1.3vw, 16px);
   }
 
-  .intro-title {
-    font-size: clamp(17px, 2.8vw, 26px);
-  }
-
   .section-title,
-  .impact-title {
+  .impact-title,
+  .intro-title,
+  .about-us-title,
+  .faq-title {
     font-size: clamp(16px, 2.4vw, 24px);
   }
 
-  .faq-title {
-    font-size: clamp(21px, 3.4vw, 38px);
-  }
-
-  .exp-hero-content h1 {
-    font-size: clamp(24px, 4.4vw, 50px);
-  }
-
+  .exp-hero-content h1,
   .tour-hero-info h1 {
-    font-size: clamp(22px, 4vw, 44px);
+    font-size: clamp(24px, 4.4vw, 50px);
   }
 
   .blog-feature-body h2 {
